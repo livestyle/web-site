@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Emmet LiveStyle — bi-directional live edit tool for CSS, LESS and SCSS</title>
+	<link rel="stylesheet" href="css/main.css" />
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+</head>
+<body>
+	<div class="layout">
+		<section class="hero">
+			<div class="layout__wrap">
+				<h1><span class="title-prefix">Emmet</span> LiveStyle</h1>
+				<p>The first bi-directional live edit tool for CSS, LESS and SCSS</p>
+			</div>
+		</section>
+		<section class="quick-tour">
+			<button class="large-button quick-tour__btn">
+				<svg width="31" height="38" viewBox="0 0 31 38" xmlns="http://www.w3.org/2000/svg" class="quick-tour__btn-play"><path d="M4.236 37.339c-2.34 1.469-4.236.423-4.236-2.348v-31.334c0-2.766 1.888-3.823 4.236-2.348l24.448 15.354c2.34 1.469 2.348 3.847 0 5.321l-24.448 15.354z" fill="#fff"/></svg>
+				Quick tour
+			</button>
+			<!-- QUICK TOUR -->
+			<script src="js/quick-tour.js" async></script>
+		</section>
+		<section class="features">
+			<div class="layout__wrap">
+				<ul class="feature-list">
+					<li class="feature-list__item">
+						<h2 class="feature-list__title">True live editing</h2>
+						<p>LiveStyle updates CSS in browser immediately, as you type. No more file saving or page reloading just to see how single update affects web page.</p>
+					</li>
+					<li class="feature-list__item">
+						<h2 class="feature-list__title">Browser → Editor</h2>
+						<p>Ever wanted to tweak layout in DevTools and get those changes into your source code? LiveStyle is the only tool that can do this right. And it works with LESS and SCSS<span class="footnote">*</span> too.</p>
+					</li>
+					<li class="feature-list__item">
+						<h2 class="feature-list__title">Use your own tools</h2>
+						<p>LiveStyle doesn’t require any special build tool or web server to work. It integrates directly into your editor and browser.<span class="footnote">**</span></p>
+					</li>
+					<li class="feature-list__item">
+						<h2 class="feature-list__title">Any scale</h2>
+						<p>Designed to work with projects of any scale: from small single-page apps to huge web-sites like Facebook. And you can even work with your live web-site!</p>
+					</li>
+					<li class="feature-list__item">
+						<h2 class="feature-list__title">Easy cross-browser testing</h2>
+						<p>With Remote View feature you can easily preview your local web-site on any internet-connected browser and device.<br />With live updates from editor and DevTools.</p>
+					</li>
+					<li class="feature-list__item">
+						<h2 class="feature-list__title">Cross-platform</h2>
+						<p>LiveStyle works everywhere your browser and editor does.</p>
+					</li>
+				</ul>
+				<h2 class="features__free">And it’s free.</h2>
+				<p class="footnote-desc"><span class="footnote">*</span> LiveStyle uses it’s own implementation of LESS and SCSS preprocessors so things may work differently. Read <a href="/docs/preprocessors/">Using Preprocessors</a> guide for more info.</p>
+				<p class="footnote-desc"><span class="footnote">**</span> Currently works in Google Chrome and Sublime Text.</p>
+			</div>
+		</section>
+		<section class="secret">
+			<div class="layout__wrap">
+				<h3 class="secret__title"><span class="pseudo-href">Secret powers</span></h3>
+			</div>
+		</section>
+		<section class="download">
+			<div class="layout__wrap">
+				<p class="download__action download__action_osx">
+					<a href="http://download.emmet.io/livestyle/livestyle-osx.zip" class="large-button">Download app</a>
+					<span class="download__comment">Requires OSX 10.8+. When downloaded and unpacked, right-click on LiveStyle.app and pick ”Open” menu item to bypass system warning.</span>
+				</p>
+				<p class="download__action download__action_win">
+					<a href="http://download.emmet.io/livestyle/livestyle-win32.zip" class="large-button">Download app</a>
+					<span class="download__comment">Requires Windows 7+. When started for the first time, please allow network access, if asked.</span>
+				</p>
+				<p class="download__action download__action_linux">
+					LiveStyle is not yet available for your platform. But you can try <a href="/docs/manual-installation/">manual installation</a>
+				</p>
+				<p>and read “<a href="/docs/">Getting started</a>” guide</p>
+			</div>
+			<script>
+			(function() {
+				var sel = '.download__action_linux';
+				if (navigator.platform.indexOf('Mac') !== -1) {
+					sel = '.download__action_osx';
+				} else if (navigator.platform.indexOf('Win') !== -1) {
+					sel = '.download__action_win';
+				}
+
+				if (sel) {
+					document.querySelector(sel).style.display = 'block';
+				}
+			})();
+			</script>
+		</section>
+		<section class="copyright">
+			<div class="layout__wrap">
+				<p>Support: <a href="mailto:info@emmet.io">info@emmet.io</a></p>
+				<p>Found a bug in LiveStyle? <a href="https://github.com/livestyle/issues/issues">Submit an issue</a>.</p>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

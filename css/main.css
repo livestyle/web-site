@@ -1,0 +1,264 @@
+@import url(./quick-tour/quick-tour.css);
+
+html, body {
+	padding: 0;
+	margin: 0;
+	background: #fff;
+	color: #34495d;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-size: 14px;
+}
+
+h2 {
+	font-size: 1.6em;
+	margin-bottom: 0.3em;
+}
+
+h2:first-child {
+	margin-top: 0;
+}
+
+p {
+	margin-top: 0;
+}
+
+a, .pseudo-href {
+	color: #19bc9d;
+	transition: color 0.2s;
+}
+
+a:hover, .pseudo-href:hover {
+	color: #15a084;
+}
+
+.pseudo-href {
+	/* border-bottom: 1px dotted currentColor; */
+	cursor: pointer;
+	background-image: linear-gradient(to right, currentColor 0%, currentColor 2px, transparent 2px, transparent 4px);
+	background-repeat: repeat-x;
+	background-size: 4px 1px;
+	background-position: 0 95%;
+}
+
+.layout__wrap {
+	max-width: 860px;
+	padding: 0 50px;
+	margin: 0 auto;
+}
+
+.large-button {
+	font-size: 48px;
+	font-family: lato, helvetica neue, helvetica, arial, sans-serif;
+	background: none;
+	border: 2px solid #fff;
+	color: inherit;
+	padding: 0.3em 0.5em;
+	border-radius: 1em;
+	cursor: pointer;
+	text-decoration: none;
+	outline: none;
+}
+
+.large-button:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.hero {
+	padding: 100px 0;
+	text-align: center;
+	font-weight: bold;
+	color: #C3C9CF;
+	font-size: 20px;
+	margin: 0;
+}
+
+.hero h1 {
+	font-size: 96px;
+	line-height: 1;
+	margin: 0 0 0.1em;
+	position: relative;
+	color: #34495d;
+}
+
+.hero .title-prefix {
+	font-size: 14px;
+	position: absolute;
+	margin-left: 6px;
+	margin-top: -0.4em;
+}
+
+.quick-tour {
+	background: #19bc9d;
+	min-height: 550px;
+	color: #fff;
+	position: relative;
+}
+
+.quick-tour__btn {
+	border-color: #90ddce;
+	display: inline-block;
+	text-align: center;
+	width: 7em;
+	box-sizing: border-box;
+	position: absolute;
+	left: 50%;
+	top: 230px;
+	margin-left: -3.5em;
+	z-index: 2;
+
+	transition-property: opacity, transform;
+	transition-duration: 0.7s;
+	transition-timing-function: ease-out;
+}
+
+.quick-tour__btn_hidden {
+	opacity: 0;
+	transform: scale(0.3);
+}
+
+.quick-tour__btn-play {
+	position: relative;
+	top: 2px;
+}
+
+.quick-tour .qt {
+	z-index: 1;
+}
+
+.qt-download__btn {
+	border-radius: 1em;
+	border-width: 2px;
+}
+
+.features {
+	background: #f6f8f8;
+	padding: 50px 0;
+}
+
+.feature-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	text-align: justify;
+	font-size: 17px;
+}
+
+.feature-list::after {
+	display: inline-block;
+	content: '';
+	height: 1px;
+	width: 100%;
+}
+
+.feature-list__item {
+	display: inline-block;
+	vertical-align: top;
+	width: 380px;
+	text-align: left;
+	margin-bottom: 1.1em;
+}
+
+.features__free {
+	font-size: 2.6em;
+	text-align: center;
+	margin-top: -0.5em;
+	margin-bottom: 1.5em;
+}
+
+.footnote {
+	color: #bdc3c7;
+}
+
+.footnote-desc {
+	color: #bdc3c7;
+	font-size: 0.8em;
+	margin-bottom: 0.5em;
+	width: 480px;
+	position: relative;
+}
+
+.footnote-desc:last-child {
+	margin-bottom: 0;
+}
+
+.footnote-desc .footnote {
+	display: inline-block;
+	width: 1em;
+	text-align: right;
+	position: absolute;
+	left: -1.3em;
+}
+
+.secret {
+	background: #6b5195;
+	color: #fff;
+	padding: 20px 0;
+	font-family: lato, helvetica neue, helvetica, arial, sans-serif;
+	display: none;
+}
+
+.secret__title {
+	font-size: 2.6em;
+	line-height: 1;
+	margin: 0;
+	font-weight: normal;
+	text-align: center;
+}
+
+.secret__title .pseudo-href {
+	color: #7f69a3;
+}
+
+.secret__title .pseudo-href:hover {
+	color: #fff;
+}
+
+.download {
+	background: #34495d;
+	color: #fff;
+	padding: 150px 0;
+	font-family: lato, helvetica neue, helvetica, arial, sans-serif;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.download__action {
+	margin-bottom: 1.4em;
+	display: none;
+}
+
+.download__comment {
+	display: inline-block;
+	vertical-align: top;
+	position: absolute;
+	width: 250px;
+	font-family: georgia, serif;
+	font-size: 0.7em;
+	color: #98a3ad;
+	text-align: left;
+	font-style: italic;
+	margin-left: 30px;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.download__action .large-button:hover {
+	color: #fff;
+}
+
+.download__action .large-button:hover + .download__comment {
+	opacity: 1;
+}
+
+.copyright {
+	background: #34495d;
+	color: #98a3ad;
+	font-family: lato, helvetica neue, helvetica, arial, sans-serif;
+	padding-bottom: 20px;
+	font-size: 0.9em;
+}
+
+.copyright p {
+	margin-bottom: 0;
+}
