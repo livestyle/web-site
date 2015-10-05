@@ -20,7 +20,7 @@ qtDownloadBtn.addEventListener('click', evt => {
 	document.querySelector('.download').scrollIntoView();
 });
 
-if (startTime) {
+if (startTime && /^\d+$/.test(startTime)) {
 	setup();
 	tour.timecode = +startTime;
 }
