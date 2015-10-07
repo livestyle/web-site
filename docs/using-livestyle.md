@@ -55,6 +55,7 @@ That’s why you can/have to associate browser and editor stylesheets in LiveSty
 
 ## Things you should learn
 
+* LiveStyle updates CSS instantly, without file saving or page reloading. And this is the first tool that do this in both directions, from editor to browser and from browser to editor.
 * You don’t need any special build tool or web-server to use LiveStyle: almost every web-site in the internet can be you playground. Try to add some style to [facebook.com](http://facebook.com) :)
 * You can use *any* CSS file for live editing, no matter how you got it: opened from hard drive, directly from FTP server or just created it without saving. If you can work with this file in text editor, then you can use it for live editing. *PS: don’t forget to set `CSS` syntax for newly created and unsaved files.*
 * LiveStyle uses source patching: you can easily tweak your small CSS modules right on your *production* web-site.
