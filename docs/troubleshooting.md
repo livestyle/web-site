@@ -14,6 +14,26 @@ If you click on this icon, you’ll see an error notification in extension popup
 
 ![image](img/err2.png)
 
+## Empty list of stylesheets
+
+If you open LiveStyle popup and see no stylesheets but you sure that current page contains external stylesheets, try the following:
+
+* Close DevTools and check out popup again. Open DevTools and check again.
+* Refresh current page.
+* Close the tab and open again.
+
+Most likely this error may appear after extension automatic update. 
+
+## No connection
+
+Chrome extension connects to editor via Websocket protocol. If you see “No connection” error, it might be one of the following:
+
+* Sublime Text is not running or LiveStyle extension for Sublime Text is not installed.
+* Your current network settings/proxy/firewall blocks connection to `http://127.0.0.1:54000`—a Websocket server runs on this address. Contact your system administrator about this issue.
+
+Another reason of “No connection” issue is broken Sublime Text web-server implementation. Check out `View > Show Console` in ST for error log. In this case you can open [LiveStyle app](/#download) and then restart ST: LiveStyle app has its own server implementation so when Sublime Text starts, it will use it instead of creating a new one.
+
+
 ## Getting debug data
 
 If your stylesheet if perfectly valid, you see no error notifications, but LiveStyle still doesn’t work as expected, you can check out an internal debug log for more info.
