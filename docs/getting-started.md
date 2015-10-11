@@ -12,9 +12,9 @@ For best live editing experience, LiveStyle integrates directly into browser and
 
 The easiest way to do so is to use [LiveStyle app](/#download):
 
-1. [Download LiveStyle app](/#download) for your OS (no Linux support yet, sorry).
+1. [Download LiveStyle app](/#download) for your OS (no Linux support yet, please use [manual installation](#manual)).
 2. Unpack and run it.
-	* *OSX users*: For the first time you have to right-click on `LiveStyle.app` and pick ”Open” menu item to bypass system warning.
+	* *OSX users*: For the first time you have to right-click on `LiveStyle.app` and pick “Open” menu item to bypass system warning.
 	* *Windows users*: When running LiveStyle for the first time, Windows may ask for network access permissions. Please allow network access, it is required to download plugins and for [Remote View](/docs/remote-view/).
 
 If everything is fine, you’ll see app window like this:
