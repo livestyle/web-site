@@ -56,7 +56,7 @@ function jsBundle(file, options) {
 		}
 
 		b._babelHelpers = [];
-		_bundles[file.path] = b.transform(babelify(b._babelHelpers, options));
+		_bundles[file.path] = b.transform(babelify(b._babelHelpers, options), {global: true});
 	}
 
 	var bundle = _bundles[file.path];

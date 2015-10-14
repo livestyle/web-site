@@ -37,6 +37,8 @@ gulp.task('css', () => {
 	.pipe(gulp.dest(dest));
 });
 
+gulp.task('demo', () => gulp.src('./demo/**', {base: './'}).pipe(gulp.dest('./out')));
+
 gulp.task('watch', ['build'], () => {
 	gulp.watch('js/**/*.js', srcOpt, ['js']);
 	gulp.watch('**/*.html', srcOpt, ['html']);
@@ -54,5 +56,5 @@ gulp.task('full', ['build'], () => {
 		.pipe(gulp.dest(dest));
 });
 
-gulp.task('build', ['js', 'site', 'css']);
+gulp.task('build', ['js', 'site', 'css', 'demo']);
 gulp.task('default', ['build']);
