@@ -5,14 +5,13 @@ css:
 ---
 <% renderNav = (nav) => %>
 <ul class="site-nav">
-	<% for item in nav.children: %>
-		<li class="site-nav__item<%= ' site-nav__item-selected' if item.selected %>">
+	<% for item in nav.flatten(): %>
+		<li class="site-nav__item<%= ' site-nav__item-selected' if item.selected is 'current' %>">
 			<% if item.selected is 'current': %>
 				<strong><%= item.title %></strong>
 			<% else: %>
 				<a href="<%= item.url %>"><%= item.title %></a>
 			<% end %>
-			<%- renderNav(item) if item.children.length %>
 		</li>
 	<% end %>
 </ul>

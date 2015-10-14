@@ -1,10 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(./assets/colors.css);
 
 body {
 	padding: 0;
 	margin: 0;
 	font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.72222;
     color: #34495e;
     background-color: #fff;
@@ -59,6 +60,13 @@ p {
     line-height: 1.72222;
 }
 
+blockquote {
+	padding: 0 0 0 16px;
+	margin: 0 0 30px;
+	border-left: 3px solid #e7e9ec;
+	font-size: 17.5px;
+}
+
 img {
 	max-width: 100%;
 	height: auto;
@@ -75,6 +83,23 @@ code {
     color: #c7254e;
     background-color: #f9f2f4;
     border-radius: 4px;
+}
+
+pre {
+    padding: 8px;
+    margin: 0 0 15px;
+    font-size: 13px;
+    line-height: 1.72222;
+    color: inherit;
+    white-space: pre;
+    background-color: #fff;
+    border: 2px solid #e7e9ec;
+    border-radius: 6px;
+}
+
+pre code {
+	background: none;
+	padding: 0;
 }
 
 hr {

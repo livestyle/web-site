@@ -10,6 +10,7 @@ import uglify from 'gulp-uglify';
 import gzip from 'gulp-gzip';
 import jsBundle from './gulp-tasks/js-bundle';
 import site from './gulp-tasks/site';
+import server from './gulp-tasks/server';
 
 const isWatching = ~process.argv.indexOf('watch') || ~process.argv.indexOf('--watch');
 const production = ~process.argv.indexOf('--production');
@@ -39,7 +40,9 @@ gulp.task('css', () => {
 
 gulp.task('demo', () => gulp.src('./demo/**', {base: './'}).pipe(gulp.dest('./out')));
 
-gulp.task('watch', ['build'], () => {
+gulp.task('server', () => server('./out'));
+
+gulp.task('watch', ['build', 'server'], () => {
 	gulp.watch('js/**/*.js', srcOpt, ['js']);
 	gulp.watch('**/*.html', srcOpt, ['html']);
 	gulp.watch('css/**', srcOpt, ['css']);

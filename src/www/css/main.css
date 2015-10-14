@@ -252,7 +252,7 @@ a:hover, .pseudo-href:hover {
 	opacity: 1;
 }
 
-.page-gooter {
+.page-footer {
 	background: #34495d;
 	color: #98a3ad;
 	font-family: lato, helvetica neue, helvetica, arial, sans-serif;
@@ -260,6 +260,6 @@ a:hover, .pseudo-href:hover {
 	font-size: 0.9em;
 }
 
-.page-gooter p {
+.page-footer p {
 	margin-bottom: 0;
 }

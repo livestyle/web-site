@@ -54,6 +54,7 @@ layout: main
 	</div>
 </section>
 <section class="download">
+	<a id="download"></a>
 	<div class="layout__wrap">
 		<p class="download__action download__action_osx">
 			<a href="http://download.emmet.io/livestyle/livestyle-osx.zip" class="large-button">Download app</a>
@@ -64,7 +65,7 @@ layout: main
 			<span class="download__comment">Requires Windows 7+. When started for the first time, please allow network access, if asked.</span>
 		</p>
 		<p class="download__action download__action_linux">
-			LiveStyle is not yet available for your platform. But you can try <a href="/docs/manual-installation/">manual installation</a>
+			LiveStyle is not yet available for your platform. But you can try <a href="/docs/#manual-installation">manual installation</a>
 		</p>
 		<p>and read “<a href="/docs/">Getting started</a>” guide</p>
 	</div>

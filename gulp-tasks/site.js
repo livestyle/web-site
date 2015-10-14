@@ -12,8 +12,15 @@ import eco from 'eco';
 import ssg from 'static-site-generator';
 import htmlTransform from 'html-transform';
 import combine from 'stream-combiner';
+import highlight from 'highlight.js';
+import imageSize from 'image-size';
 
 var htmlparser = htmlTransform.htmlparser;
+marked.setOptions({
+	highlight(code) {
+		return highlight.highlightAuto(code).value;
+	}
+});
 
 export default function(src, dest, options) {
 	options = extend({
@@ -36,7 +43,7 @@ export default function(src, dest, options) {
 				var utils = htmlparser.DomUtils;
 				var node = utils.findOne(elem => elem.attribs['class'] === 'qt', dom);
 				if (!node) {
-					return '!!!NO QT NODE!!!';
+					throw new Error('No quick tour code found');
 				}
 
 				return utils.getOuterHTML(node);;
@@ -55,8 +62,22 @@ export default function(src, dest, options) {
 	var transform = {
 		transformUrl: function(url, file, ctx) {
 			if (ctx.type === 'html' && ctx.stats) {
+				var node = ctx.node;
+				if (node.name === 'img' && !ctx.node.width) {
+					// add sizes for images for better UX
+					let filePath = path.join(file.base, ctx.clean);
+					try {
+						let size = imageSize(filePath);
+						node.attribs.width = size.width + '';
+						node.attribs.height = size.height + '';
+					} catch (e) {
+						console.warn('Unable to get image size for', filePath);
+						console.warn(e);
+					}
+				}
 				url = '/-/' + ctx.stats.hash + url;
 			}
+
 			return url;
 		}
 	};
