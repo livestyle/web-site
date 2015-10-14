@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title><%= @document.title or @site.title %></title>
+	<% for href in @css(): %>
+		<link rel="stylesheet" href="<%= href %>" />
+	<% end %>
+</head>
+<body>
+	<div class="layout">
+		<%- @content %>
+		<footer class="page-footer">
+			<p>Support: <a href="mailto:info@emmet.io">info@emmet.io</a></p>
+			<p>Found a bug in LiveStyle? <a href="https://github.com/livestyle/issues/issues">Submit an issue</a>.</p>
+		</footer>
+	</div>
+</body>
+</html>

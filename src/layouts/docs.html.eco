@@ -1,0 +1,27 @@
+---
+layout: base
+css:
+  - '/css/docs.css'
+---
+<% renderNav = (nav) => %>
+<ul class="site-nav">
+	<% for item in nav.children: %>
+		<li class="site-nav__item<%= ' site-nav__item-selected' if item.selected %>">
+			<% if item.selected is 'current': %>
+				<strong><%= item.title %></strong>
+			<% else: %>
+				<a href="<%= item.url %>"><%= item.title %></a>
+			<% end %>
+			<%- renderNav(item) if item.children.length %>
+		</li>
+	<% end %>
+</ul>
+<% end %>
+
+<div class="project-title"><a href="/"><span class="project-title__prefix">Emmet</span> LiveStyle</a></div>
+<nav class="main-nav">
+	<%- renderNav(@navigation) %>
+</nav>
+<section class="content">
+<%- @content %>
+</section>

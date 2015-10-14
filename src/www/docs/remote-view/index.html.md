@@ -1,3 +1,8 @@
+---
+layout: docs
+title: Remote View
+navOrder: 3
+---
 # Remote View
 
 During a project development, you’ll likely have local web-site running on a simple web-server with `http://localhost:8080` address or something. Everything works fine until you wish to test your local web-site on external device, say, mobile phone. It’s not a problem if your computer and phone are on the same network, all you need is to use network IP of your computer (like `http://10.0.1.2:8080`) to preview your local web-site on mobile.
@@ -16,7 +21,7 @@ For this tutorial we’ll use a [demo page](/demo/) and [sample stylesheet](/dem
 
 1. In Google Chrome, visit a web-site you want to share. For this tutorial, we’ll use http://livestyle.io/demo/, but you can use your local web-site like `http://localhost:8080`.
 2. Click on **LS** icon to open LiveStyle popup and toggle Remote View:
-![image](img/rv1.png)
+![image](../img/rv1.png)
 > When enabled for a first time, you will be asked for authorization permission. You need a Google account to authenticate.
 3. In a few seconds, you’ll see a public domain like `some-name.livestyle.io`that points to domain of the page where you enabled Remote View. If you enabled it for demo page, it will point to `http://livestyle.io`, if enabled for `http://localhost:8080/about/`, it will point to `http://localhost:8080` and so on. Use this domain to preview you local web-site on external devices or other browsers. But for now simply click on this public domain to open the same page via Remote View in another tab.
 4. Now, in Sublime Text edit a CSS file associated with browser file of original page (e.g. `layout.css`) and you should see that both original and Remote View pages are updated immediately.

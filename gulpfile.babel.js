@@ -1,5 +1,7 @@
+import path from 'path';
 import buffer from 'vinyl-buffer';
 import through from 'through2';
+import extend from 'xtend';
 import gulp from 'gulp';
 import sourcemaps from 'gulp-sourcemaps';
 import postcss from 'gulp-postcss';
@@ -7,29 +9,24 @@ import minify from 'gulp-minify-css';
 import uglify from 'gulp-uglify';
 import gzip from 'gulp-gzip';
 import jsBundle from './gulp-tasks/js-bundle';
-import injectQuickTour from './gulp-tasks/inject-quick-tour';
+import site from './gulp-tasks/site';
 
 const isWatching = ~process.argv.indexOf('watch') || ~process.argv.indexOf('--watch');
 const production = ~process.argv.indexOf('--production');
 const dest = './out';
+const srcOpt = {cwd: './src/www', base: './src/www'};
 
 gulp.task('js', () => {
 	var stream;
-	return stream = gulp.src('./js/*.js', {base: './', read: false})
+	return stream = gulp.src('js/*.js', extend(srcOpt, {read: false}))
 	.pipe(jsBundle({watch: isWatching})).once('error', err => stream.emit('error', err))
 	.pipe(buffer()).once('error', err => stream.emit('error', err))
 	.pipe(production ? uglify() : through.obj())
 	.pipe(gulp.dest(dest));
 });
 
-gulp.task('html', () => {
-	return gulp.src(['./*.html'], {base: './'})
-	.pipe(injectQuickTour())
-	.pipe(gulp.dest(dest));
-});
-
 gulp.task('css', () => {
-	return gulp.src('./css/*.css', {base: './'})
+	return gulp.src('css/*.css', srcOpt)
 	.pipe(sourcemaps.init())
 	.pipe(postcss([
 		require('postcss-import'),
@@ -41,12 +38,14 @@ gulp.task('css', () => {
 });
 
 gulp.task('watch', ['build'], () => {
-	gulp.watch('./js/**/*.js', ['js']);
-	gulp.watch(['./*.html', './test/**/*.html'], ['html']);
-	gulp.watch('./css/**', ['css']);
+	gulp.watch('js/**/*.js', srcOpt, ['js']);
+	gulp.watch('**/*.html', srcOpt, ['html']);
+	gulp.watch('css/**', srcOpt, ['css']);
 });
 
-gulp.task('full', ['build'], function() {
+gulp.task('site', () => site(['www/**/*.*', '!**/*.{css,js}'], '../out'));
+
+gulp.task('full', ['build'], () => {
 	return gulp.src('**/*.{html,css,js,ico}', {cwd: dest})
 		.pipe(gzip({
 			threshold: '1kb',
@@ -55,5 +54,5 @@ gulp.task('full', ['build'], function() {
 		.pipe(gulp.dest(dest));
 });
 
-gulp.task('build', ['js', 'html', 'css']);
+gulp.task('build', ['js', 'site', 'css']);
 gulp.task('default', ['build']);

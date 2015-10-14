@@ -1,3 +1,8 @@
+---
+layout: docs
+title: Troubleshooting
+navOrder: 4
+---
 # Troubleshooting
 
 LiveStyle is very experimental and very complex piece of software. And sometimes it doesn’t work the way as it should. This guide will help you find the cause of the problems.
@@ -8,11 +13,11 @@ For the best bi-directional live edit experience, LiveStyle performs [source pat
 
 If a stylesheet can’t be parsed at all or ther were critical error during live update, you’ll see a LiveStyle icon in Google Chrome flashing red for some time:
 
-![image](img/err1.png)
+![image](../img/err1.png)
 
 If you click on this icon, you’ll see an error notification in extension popup. Also, a persistent “Show error log” link will appear in popup so you can click on it and review what caused errors:
 
-![image](img/err2.png)
+![image](../img/err2.png)
 
 ## Empty list of stylesheets
 
@@ -44,7 +49,7 @@ To get debug log:
 2. Enable “Developer mode” in the upper right corner.
 3. Click on “background page” in *Emmet LiveStyle* extension:
 
-![image](img/err3.png)
+![image](../img/err3.png)
 
 It will open a DevTools window. Go to “Console” pane to see debug log and possible hints about what’s going wrong.
 

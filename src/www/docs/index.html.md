@@ -1,3 +1,7 @@
+---
+layout: docs
+title: Getting started
+---
 # Getting started
 
 LiveStyle is a tool for live CSS editing, similar to popular [LiveReload](http://livereload.com), [CodeKit](https://incident57.com/codekit/) etc. The idea is simple: you edit CSS file in your editor, save it and see how web-page in your browser that contains this stylesheet is automatically refreshed, giving you a visual feedback of changes you just made.

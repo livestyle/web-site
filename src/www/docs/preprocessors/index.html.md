@@ -1,3 +1,8 @@
+---
+layout: docs
+title: Working with preprocessors
+navOrder: 2
+---
 # Working with preprocessors
 
 With LiveStyle, you can use LESS and SCSS (no SASS dialect yet) for bi-directional editing. Use them [the same way as CSS files](/docs/using-livestyle/): open `.less` or `.scss` files in editor and associate them with browser files in Google Chrome extension popup. But first you should learn a few very important things about preprocessor support.

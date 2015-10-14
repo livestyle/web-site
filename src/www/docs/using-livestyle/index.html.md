@@ -1,10 +1,15 @@
+---
+layout: docs
+title: Using LiveStyle
+navOrder: 1
+---
 # Using LiveStyle
 
-After [installing browser and editor plugins](/docs/), you are ready to start using LiveStyle.
+After [installing browser and editor plugins](../), you are ready to start using LiveStyle.
 
 All LiveStyle settings are controlled via Google Chrome extension:
 
-![image](img/ls-controls.png)
+![image](../img/ls-controls.png)
 
 The LiveStyle popup displays list of stylesheets, available on current web-page. Below each browser stylesheet is a drop-down list with all stylesheets, opened in editor. To start using LiveStyle, you simply enable it for current page and associate browser stylesheet with one of the editor stylesheet. After that, all updates from editor stylesheet will be pushed to designated browser stylesheet and vice versa.
 
@@ -24,7 +29,7 @@ Let’s create our first live updates session to see how easy and fun LiveStyle 
 4. The popup displays `style.min.css` as the only browser stylesheet. In most cases, LiveStyle will try to automatically associate browser and editor stylesheets using their file names. But since our stylesheets has different names—`style.min.css` and `layout.css`—we have to associate them manually. Simply pick `layout.css` from a drop-down list.
 5. You are ready to go! In Sublime Text, change the `color` property to `red` in `h1 {...}` rule and you should see how `Hello world` on page turns red! Play around with `h1 {...}` and add, for example, `background: yellow;`.
 6. Now open DevTools and find and click on `<h1 class="page-title">` element. You should see that *Styles* contains your recent updates made in code editor:
-![image](img/ls-demo1.png)
+![image](../img/ls-demo1.png)
 7. In DevTools, set `color` of `h1` header to `blue`—and the source code in Sublime Text updates accordingly. Go ahead, add `padding: 10px;` for `h1` in DevTools.
 
 You just saw how easy it is to start live CSS editing with LiveStyle, but you haven’t discovered the most powerful feature yet.
