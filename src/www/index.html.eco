@@ -44,7 +44,7 @@ layout: main
 			</li>
 		</ul>
 		<h2 class="features__free">And it’s free.</h2>
-		<p class="footnote-desc"><span class="footnote">*</span> LiveStyle uses it’s own implementation of LESS and SCSS preprocessors so things may work differently. Read <a href="/docs/preprocessors/">Using Preprocessors</a> guide for more info.</p>
+		<p class="footnote-desc"><span class="footnote">*</span> LiveStyle uses it’s own implementation of LESS and SCSS preprocessors so things may work differently. Read <a href="/docs/preprocessors/">Working with preprocessors</a> guide for more info.</p>
 		<p class="footnote-desc"><span class="footnote">**</span> Currently works in Google Chrome and Sublime Text.</p>
 	</div>
 </section>
