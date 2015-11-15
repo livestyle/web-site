@@ -1,0 +1,61 @@
+.editor {
+	position: relative;
+	width: 512px;
+	height: 430px;
+	border-radius: 6px;
+	background: #2b303b;
+	box-shadow: 0px 8px 30px 0px rgba(0,0,0,0.6);
+	font-family: 'Helvetica Neue', tahoma, sans-serif;
+	font-size: 11px;
+	/* overflow: hidden; */
+}
+
+.editor__title-bar {
+	border-radius: 5px 5px 0 0;
+	background-image: linear-gradient(to bottom, #ededed 0%, #d8d8d8 100%);
+	box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,0.8);
+	border-bottom: 1px solid #969696;
+	height: 22px;
+	position: relative;
+	z-index: 2;
+}
+
+.editor .app-icon__group {
+	top: 5px;
+	left: 8px;
+}
+
+.editor__tab-bar {
+	background: #1c1f26;
+	overflow: hidden;
+	box-shadow: 0px 2px 5px 0px rgba(28,31,38,0.30);
+}
+
+.editor__tab {
+	display: inline-block;
+	color: #fff;
+	padding: 7px 10px;
+	float: left;
+	background: #2b303b;
+}
+
+.editor__tab[data-source="usb"] {
+	background: #0093db;
+}
+
+.editor__tab[data-source="ftp"] {
+	background: #e14300;
+}
+
+.editor__tab[data-source="smb"] {
+	background: #9e21ad;
+}
+
+.editor__tab[data-source="untitled"] {
+	background: #ff9a00;
+}
+
+.editor .qt-tx {
+	padding: 10px;
+	font-size: 1.2em;
+}

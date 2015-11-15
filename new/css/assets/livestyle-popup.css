@@ -1,0 +1,134 @@
+.livestyle-popup {
+	position: absolute;
+	background: #fff;
+	z-index: 10;
+	padding: 15px;
+	width: 210px;
+	top: 63px;
+	right: 24px;
+	box-shadow: 0px 2px 13px 0px rgba(0,0,0,0.30);
+	font-family: Lato, arial, sans-serif;
+	color: #2F485F;
+	transform-origin: 200px -5px;
+}
+
+.livestyle-popup::before {
+	content: '';
+	background: inherit;
+	width: 10px;
+	height: 10px;
+	transform: rotate(45deg);
+	display: block;
+	position: absolute;
+	top: -5px;
+	right: 20px;
+}
+
+.livestyle-popup__main {
+	position: relative;
+}
+
+.livestyle-popup__title {
+	margin: 0;
+	font-size: 1.5em;
+	font-weight: normal;
+	background-color: inherit;
+	white-space: nowrap;
+}
+
+.livestyle-popup__main .livestyle-popup__title {
+	margin-bottom: 11px;
+}
+
+.livestyle-popup__rv .livestyle-popup__title {
+	line-height: 36px;
+}
+
+.livestyle-popup__toggler {
+	position: absolute;
+	top: 2px;
+	right: 0;
+	width: 40px;
+	height: 16px;
+	background: #344a5d;
+	color: #26bb9d;
+	border-radius: 8px;
+	transition-property: background-color, color;
+	transition-duration: 0.2s;
+}
+
+.livestyle-popup__toggler::after {
+	width: 12px;
+	height: 12px;
+	content: '';
+	display: block;
+	border-radius: 6px;
+	background: currentColor;
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	transition: transform 0.2s;
+}
+
+.livestyle-popup__toggler::before {
+	content: 'ON';
+	position: absolute;
+	top: 3px;
+	left: 9px;
+	font-size: 9px;
+	transition: transform 0.2s;
+	line-height: 1;
+}
+
+.livestyle-popup__editor-file {
+	background: #26bb9d;
+	color: #fff;
+	padding: 6px 10px 7px;
+	line-height: 1;
+	border-radius: 4px;
+	margin: 3px -10px 0;
+	position: relative;
+}
+
+.livestyle-popup__editor-file::after {
+	position: absolute;
+	content: '▾';
+	right: 7px;
+	top: 6px;
+}
+
+.livestyle-popup__rv {
+	position: relative;
+	top: 15px;
+	background: #e57c2c;
+	color: #fff;
+	padding: 0 10px;
+	margin: 40px -10px 0;
+	height: 36px;
+	overflow: hidden;
+}
+
+.livestyle-popup__rv .livestyle-popup__toggler {
+	top: 10px;
+	right: 10px;
+	background: #fff;
+	color: #e57c2c;
+}
+
+.livestyle-popup__rv .livestyle-popup__toggler::after {
+	background: #e57c2c;
+}
+
+.livestyle-popup__rv .livestyle-popup__toggler_disabled {
+	background: #f29a26;
+	color: #fff;
+}
+
+.livestyle-popup__rv .livestyle-popup__toggler_disabled::after {
+	transform: translateX(-24px);
+}
+
+.livestyle-popup__rv .livestyle-popup__toggler_disabled::before {
+	content: 'OFF';
+	transform: translateX(9px);
+}

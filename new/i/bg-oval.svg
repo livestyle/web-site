@@ -1,0 +1,31 @@
+<svg width="870" height="664" viewBox="0 0 870 664" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="a">
+            <stop stop-color="#fff" stop-opacity=".012" offset="0%"/>
+            <stop stop-opacity=".043" offset="100%"/>
+        </linearGradient>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="b">
+            <feMorphology radius="16" in="SourceAlpha" operator="dilate" result="shadowSpreadOuter1"/>
+            <feOffset dy="5" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur stdDeviation="26" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.105610281 0" in="shadowBlurOuter1" result="shadowMatrixOuter1"/>
+            <feMorphology radius="13" in="SourceAlpha" operator="dilate" result="shadowSpreadInner1"/>
+            <feOffset dy="-27" in="shadowSpreadInner1" result="shadowOffsetInner1"/>
+            <feGaussianBlur stdDeviation="16" in="shadowOffsetInner1" result="shadowBlurInner1"/>
+            <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"/>
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0504868659 0" in="shadowInnerInner1" result="shadowMatrixInner1"/>
+            <feMorphology radius="41" in="SourceAlpha" operator="dilate" result="shadowSpreadInner2"/>
+            <feOffset dy="-82" in="shadowSpreadInner2" result="shadowOffsetInner2"/>
+            <feGaussianBlur stdDeviation="125" in="shadowOffsetInner2" result="shadowBlurInner2"/>
+            <feComposite in="shadowBlurInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"/>
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0781476449 0" in="shadowInnerInner2" result="shadowMatrixInner2"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+                <feMergeNode in="shadowMatrixInner1"/>
+                <feMergeNode in="shadowMatrixInner2"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <circle cx="640" cy="224" r="367" transform="translate(-205)" stroke="url(#a)" filter="url(#b)" fill="#F6F6F6"/>
+</svg>

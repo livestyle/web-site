@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>LiveStyle – the first bi-directional real-time edit tool for CSS, LESS and SCSS</title>
+	<link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+	<section class="layout-container layout-container_bg1">
+		<div class="layout-content">
+			<div class="project-logo"></div>
+			<section class="hero">
+				<h1>LiveStyle. The first bi-directional real-time edit tool for CSS, LESS and SCSS.</h1>
+				<ul class="hero-links">
+					<li class="hero-links__item"><a href="/demo/">Watch the demo</a></li>
+					<li class="hero-links__item"><a href="/docs/">Getting started guide</a></li>
+				</ul>
+				<p><a href="/download" class="download-btn">Download App</a></p>
+				<span class="hero-image"></span>
+			</section>
+		</div>
+		<hr />
+		<div class="layout-content layout-content_bidirectional">
+			<img src="./i/bidirectional.svg" alt="" class="section-icon" />
+			<h2>Bi-directional</h2>
+			<p>Changes are transmitted from the editor to the browser and the browser into the editor.</p>
+			<div class="layout-assets">
+				<div class="browser">
+					<div class="app-icon__group"><i class="app-icon"></i><i class="app-icon"></i><i class="app-icon"></i>
+					</div>
+					<div class="browser__title-bar">
+						<div class="browser__tab">Google Chrome</div>
+					</div>
+					<div class="browser__toolbar">
+						<i class="browser__arrow-icon"></i>
+						<i class="browser__arrow-icon browser__arrow-icon_forward"></i>
+						<i class="browser__ls-icon"></i>
+						<i class="browser__options-icon"></i>
+						<div class="browser__address-bar">localhost:8080</div>
+					</div>
+
+					<div class="livestyle-popup">
+						<section class="livestyle-popup__main">
+							<h4 class="livestyle-popup__title">Enable LiveStyle</h4>
+							<span class="livestyle-popup__toggler"></span>
+							<div class="livestyle-popup__browser-file">style.min.css</div>
+							<div class="livestyle-popup__editor-file">layout.css</div>
+						</section>
+					</div>
+
+					<div class="browser__content">
+						<div class="browser__content-el1">Hello world!</div>
+						<div class="browser__content-el2">A web-page example</div>
+					</div>
+
+					<div class="browser__devtools">
+						<div class="browser__devtools-style-pane">
+							<span class="browser__devtools-style-pane-file">style.min.css</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="editor">
+					<div class="app-icon__group"><i class="app-icon"></i><i class="app-icon"></i><i class="app-icon"></i>
+					</div>
+					<div class="editor__title-bar"></div>
+					<section class="editor__tab-bar">
+						<span class="editor__tab" data-source="local">layout.css</span>
+					</section>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="layout-container">
+		<div class="layout-content">
+			<i class="section-icon"></i>
+			<h2>One Heart</h2>
+			<p>In LiveStyle, you connect browser style sheets with files from your editor. It gives you unmatched flexibility: you can use files from your hard drive, USB, FTP, network mount or event new, unsaved files.</p>
+
+			<p class="comment">And you can even edit your live web-site.</p>
+			<p class="comment">No special server setup required.</p>
+		</div>
+	</section>
+	<section class="layout-container">
+		<div class="layout-content">
+			<i class="section-icon"></i>
+			<h2>Remote View</h2>
+			<p>Remote View creates a publicly available URL that points to your local web-site. Use this URL to preview local web-site on any internet-connected device or browser.</p>
+			<p>With instant real-time updates from editor and DevTools.</p>
+		</div>
+
+		<hr />
+
+		<div class="layout-content">
+			<ul class="feature-summary">
+				<li class="feature-summary__item">
+					<h3>Real-time editing</h3>
+					<p>LiveStyle updates CSS in browser immediately, as you type. No more file saving or page reloading just to see how single update affects web page.</p>
+				</li>
+				<li class="feature-summary__item">
+					<h3>Browser → Editor</h3>
+					<p>Ever wanted to tweak layout in DevTools and get those changes into your source code? LiveStyle is the only tool that can do this right. And it works with LESS and SCSS too.</p>
+				</li>
+				<li class="feature-summary__item">
+					<h3>Use your own tools</h3>
+					<p>LiveStyle doesn’t require any special build tool or web server to work. It integrates directly into your editor and browser. <em>Currently works in Google Chrome and Sublime Text.</em></p>
+				</li>
+				<li class="feature-summary__item">
+					<h3>Any scale</h3>
+					<p>LiveStyle designed to work with projects of any scale: from small single-page apps to huge web-sites like Facebook. And you can even work with your live web-site!</p>
+				</li>
+				<li class="feature-summary__item">
+					<h3>Easy cross-browser testing</h3>
+					<p>With Remote View feature you can easily preview your local web-site on any internet-connected browser and device. With live updates from editor and DevTools.</p>
+				</li>
+				<li class="feature-summary__item">
+					<h3>Cross-platform</h3>
+					<p>LiveStyle works everywhere your browser and editor does.</p>
+				</li>
+			</ul>
+		</div>
+
+		<hr />
+
+		<div class="layout-content">
+			<p><a href="/download" class="download-btn">Download App</a></p>
+		</div>
+	</section>
+
+	<footer class="page-footer">
+		<ul class="footer-links">
+			<li class="footer-links__item"><a href="https://twitter.com/emmetio">Twitter</a></li>
+			<li class="footer-links__item"><a href="https://github.com/livestyle">GitHub</a></li>
+			<li class="footer-links__item"><a href="/issue">Submit an issue</a></li>
+			<li class="footer-links__item"><a href="mailto:imfo@emmet.io">Mail support</a></li>
+			<li class="footer-links__item"><a href="/docs/">Guide</a></li>
+		</ul>
+		<p class="copyright">Design by <a href="http://emuravjev.ru">Evgeny Muravjev</a></p>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,151 @@
+@import url(./assets/browser.css);
+@import url(./assets/editor.css);
+@import url(./assets/livestyle-popup.css);
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'helvetica neue', helvetica, arial, sans-serif;
+	font-weight: 200;
+	font-size: 21px;
+	line-height: 1.3;
+}
+
+hr {
+	width: 800px;
+	margin: 0 auto;
+	border: 0;
+	border-top: 1px solid #bbb;
+}
+
+h1 {
+	font-weight: 200;
+	font-size: 1.8em;
+	line-height: 1.25;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+
+h2 {
+	font-weight: normal;
+	margin-top: 38px;
+	margin-bottom: 10px;
+	font-size: 1.3em;
+}
+
+p {
+	margin-top: 0;
+}
+
+.layout-container {
+	position: relative;
+	overflow: hidden;
+}
+
+.layout-container_bg1 {
+	background: #E5E5E5;
+}
+
+.layout-content {
+	width: 800px;
+	margin: 0 auto;
+	position: relative;
+	padding: 60px;
+	text-align: center;
+	box-sizing: border-box;
+	z-index: 1;
+}
+
+.layout-assets {
+	position: relative;
+}
+
+.project-logo {
+	height: 150px;
+}
+
+.hero {
+	height: 410px;
+}
+
+.hero-image {
+	width: 870px;
+	height: 664px;
+	display: block;
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 50%;
+	margin-left: -435px;
+	background: url(../i/bg-shape.png);
+	background-size: 100% 100%;
+}
+
+.hero-links {
+	list-style-type: none;
+	margin: 0 0 97px;
+	font-size: 0.95em;
+}
+
+.hero-links__item {
+	display: inline-block;
+	margin: 0 30px;
+}
+
+.hero-links__item a {
+	text-decoration: none;
+	color: #000;
+}
+
+.hero-links__item a:hover {
+	color: #666;
+}
+
+.download-btn {
+	display: inline-block;
+	background: #fff;
+	border: 2px solid #446AF8;
+	border-radius: 40px;
+	text-decoration: none;
+	padding: 6px 35px;
+	font-size: 1em;
+}
+
+.hero .download-btn {
+	background: #f4f4f4;
+}
+
+.app-icon__group {
+	position: absolute;
+	z-index: 10;
+	left: 10px;
+	top: 10px;
+}
+
+.app-icon {
+	width: 10px;
+	height: 10px;
+	background: #8e8e93;
+	border: 1px solid #6e6f76;
+	display: inline-block;
+	margin-right: 6px;
+	border-radius: 100%;
+}
+
+.layout-content_bidirectional .layout-assets {
+	height: 640px;
+	margin-top: 60px;
+}
+
+.layout-content_bidirectional .browser {
+	position: absolute;
+	width: 830px;
+	height: 640px;
+	right: 215px;
+}
+
+.layout-content_bidirectional .editor {
+	position: absolute;
+	left: 525px;
+	height: 640px;
+}
