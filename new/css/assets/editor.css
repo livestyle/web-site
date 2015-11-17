@@ -18,6 +18,16 @@
 	height: 22px;
 	position: relative;
 	z-index: 2;
+	text-align: center;
+}
+
+.editor__title-bar:before {
+	content: 'Sublime Text';
+	font-size: 13px;
+	font-weight: normal;
+	color: #555;
+	display: inline-block;
+	margin-top: 4px;
 }
 
 .editor .app-icon__group {
@@ -40,22 +50,17 @@
 }
 
 .editor__tab[data-source="usb"] {
-	background: #0093db;
+	background: #4862FB;
 }
 
 .editor__tab[data-source="ftp"] {
-	background: #e14300;
+	background: #7AD500;
 }
 
 .editor__tab[data-source="smb"] {
-	background: #9e21ad;
+	background: #F73C37;
 }
 
 .editor__tab[data-source="untitled"] {
-	background: #ff9a00;
-}
-
-.editor .qt-tx {
-	padding: 10px;
-	font-size: 1.2em;
+	background: #B5AB00;
 }

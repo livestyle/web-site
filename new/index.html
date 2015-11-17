@@ -3,17 +3,20 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>LiveStyle – the first bi-directional real-time edit tool for CSS, LESS and SCSS</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic" />
 	<link rel="stylesheet" href="./css/main.css" />
 </head>
 <body>
 	<section class="layout-container layout-container_bg1">
 		<div class="layout-content">
-			<div class="project-logo"></div>
+			<div class="project-logo">
+				<img src="./i/logo.svg" width="201" height="45" alt="LiveStyle" />
+			</div>
 			<section class="hero">
 				<h1>LiveStyle. The first bi-directional real-time edit tool for CSS, LESS and SCSS.</h1>
 				<ul class="hero-links">
-					<li class="hero-links__item"><a href="/demo/">Watch the demo</a></li>
-					<li class="hero-links__item"><a href="/docs/">Getting started guide</a></li>
+					<li class="hero-links__item"><a href="/demo/" class="hero-link_demo">Watch the demo</a></li>
+					<li class="hero-links__item"><a href="/docs/" class="hero-link_guide">Getting started guide</a></li>
 				</ul>
 				<p><a href="/download" class="download-btn">Download App</a></p>
 				<span class="hero-image"></span>
@@ -21,7 +24,7 @@
 		</div>
 		<hr />
 		<div class="layout-content layout-content_bidirectional">
-			<img src="./i/bidirectional.svg" alt="" class="section-icon" />
+			<img src="./i/bidirectional.svg" width="73" height="73" alt="" class="section-icon" />
 			<h2>Bi-directional</h2>
 			<p>Changes are transmitted from the editor to the browser and the browser into the editor.</p>
 			<div class="layout-assets">
@@ -71,19 +74,34 @@
 			</div>
 		</div>
 	</section>
-	<section class="layout-container">
-		<div class="layout-content">
-			<i class="section-icon"></i>
+	<section class="layout-container layout-container_bg2">
+		<div class="layout-content layout-content_one-heart">
+			<img src="./i/one-heart.svg" alt="" width="73" height="73" class="section-icon" />
 			<h2>One Heart</h2>
 			<p>In LiveStyle, you connect browser style sheets with files from your editor. It gives you unmatched flexibility: you can use files from your hard drive, USB, FTP, network mount or event new, unsaved files.</p>
+
+			<div class="layout-assets">
+				<div class="editor">
+					<div class="app-icon__group"><i class="app-icon"></i><i class="app-icon"></i><i class="app-icon"></i>
+					</div>
+					<div class="editor__title-bar"></div>
+					<section class="editor__tab-bar">
+						<span class="editor__tab" data-source="local">layout.css</span>
+						<span class="editor__tab" data-source="usb">usb/page.css</span>
+						<span class="editor__tab" data-source="ftp">ftp://css/forms.css</span>
+						<span class="editor__tab" data-source="smb">smb://work/cv.css</span>
+						<span class="editor__tab" data-source="untitled">untitled</span>
+					</section>
+				</div>
+			</div>
 
 			<p class="comment">And you can even edit your live web-site.</p>
 			<p class="comment">No special server setup required.</p>
 		</div>
 	</section>
 	<section class="layout-container">
-		<div class="layout-content">
-			<i class="section-icon"></i>
+		<div class="layout-content layout-content_remote-view">
+			<img src="./i/remote-view.svg" alt="" width="73" height="73" class="section-icon" />
 			<h2>Remote View</h2>
 			<p>Remote View creates a publicly available URL that points to your local web-site. Use this URL to preview local web-site on any internet-connected device or browser.</p>
 			<p>With instant real-time updates from editor and DevTools.</p>
@@ -91,7 +109,7 @@
 
 		<hr />
 
-		<div class="layout-content">
+		<div class="layout-content layout-content_features">
 			<ul class="feature-summary">
 				<li class="feature-summary__item">
 					<h3>Real-time editing</h3>
@@ -122,17 +140,19 @@
 
 		<hr />
 
-		<div class="layout-content">
-			<p><a href="/download" class="download-btn">Download App</a></p>
+		<div class="layout-content layout-content_download">
+			<a href="/download" class="download-btn">Download App</a>
 		</div>
+
+		<hr />
 	</section>
 
 	<footer class="page-footer">
 		<ul class="footer-links">
 			<li class="footer-links__item"><a href="https://twitter.com/emmetio">Twitter</a></li>
 			<li class="footer-links__item"><a href="https://github.com/livestyle">GitHub</a></li>
-			<li class="footer-links__item"><a href="/issue">Submit an issue</a></li>
-			<li class="footer-links__item"><a href="mailto:imfo@emmet.io">Mail support</a></li>
+			<li class="footer-links__item"><a href="https://github.com/livestyle/issues/issues">Submit an issue</a></li>
+			<li class="footer-links__item"><a href="mailto:info@emmet.io">Mail support</a></li>
 			<li class="footer-links__item"><a href="/docs/">Guide</a></li>
 		</ul>
 		<p class="copyright">Design by <a href="http://emuravjev.ru">Evgeny Muravjev</a></p>
