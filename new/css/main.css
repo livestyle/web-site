@@ -1,6 +1,7 @@
 @import url(./assets/browser.css);
 @import url(./assets/editor.css);
 @import url(./assets/livestyle-popup.css);
+@import url(./assets/devices.css);
 
 body {
 	padding: 0;
@@ -212,6 +213,37 @@ a:link:hover {
 	height: 315px;
 	display: inline-block;
 }
+
+.layout-content_remote-view .layout-assets {
+	height: 420px;
+	position: relative;
+}
+
+.layout-content_remote-view .layout-assets::after {
+	content: '';
+	width: 2000px;
+	height: 110px;
+	position: absolute;
+	left: -1000px;
+	bottom: -40px;
+	background-image: linear-gradient(rgba(255, 255, 255, 0), #fff 54%);
+	z-index: 10;
+}
+
+.layout-content_remote-view .browser {
+	height: 100%;
+	position: absolute;
+	right: 230px;
+	width: 700px;
+}
+
+.layout-content_remote-view .editor {
+	position: absolute;
+	left: 515px;
+	height: 100%;
+	width: 400px;
+}
+
 
 .layout-content_features {
 	padding: 33px 0;

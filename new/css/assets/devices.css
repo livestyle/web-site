@@ -1,0 +1,215 @@
+/* Common device data */
+.device-list {
+	position: relative;
+	text-align: justify;
+	max-width: 900px;
+	margin: 0 -60px 40px;
+}
+
+.device-list::after {
+	content: '';
+	display: inline-block;
+	width: 100%;
+	height: 0;
+}
+
+.device {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.device-content {
+	background: #D0D0D0;
+	color: #fff;
+	font-size: 9px;
+	text-align: left;
+	overflow: hidden;
+}
+
+.device-label {
+	position: absolute;
+	display: inline-block;
+	width: 14em;
+	margin-left: -7em;
+	top: 180px;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #888;
+	letter-spacing: 2px;
+
+}
+
+/* Laptop */
+
+.device-laptop {
+	width: 300px;
+}
+
+.device-laptop-screen {
+	width: 236px;
+	height: 152px;
+	border: 1px solid #9B9B9B;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.device-laptop-screen::before {
+	content: '';
+	display: block;
+	width: 1px;
+	height: 1px;
+	border-radius: 3px;
+	border: 2px solid #8492A5;
+	position: absolute;
+	left: 50%;
+	margin-left: -2px;
+	top: 6px;
+}
+
+.device-laptop-body {
+	height: 11px;
+	border: 1px solid #9B9B9B;
+	margin-top: -1px;
+	border-bottom-left-radius: 25px 7px;
+	border-bottom-right-radius: 25px 7px;
+	position: relative;
+}
+
+.device-laptop-body::before {
+	content: '';
+	display: block;
+	position: relative;
+	width: 64px;
+	height: 4px;
+	border: 1px solid #9B9B9B;
+	margin: -1px auto;
+	border-radius: 0 0 3px 3px;
+}
+
+.device-laptop-content {
+	height: 115px;
+	border: 1px solid #B8B8B8;
+	margin: 17px 9px;
+	padding: 10px 50px 0;
+}
+
+/* VM */
+.device-vm {
+	width: 196px;
+	height: 114px;
+	border: 1px solid #9B9B9B;
+	border-radius: 6px;
+}
+
+.device-vm-app-icons {
+	width: 4px;
+	height: 4px;
+	display: block;
+	margin: 2px 6px;
+	position: relative;
+	border: 1px solid #9B9B9B;
+	border-radius: 100%;
+}
+
+.device-vm-app-icons::before,
+.device-vm-app-icons::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border: inherit;
+	border-radius: inherit;
+	top: -1px;
+	left: 9px;
+}
+
+.device-vm-app-icons::after {
+	left: 19px;
+}
+
+.device-vm-content {
+	height: 94px;
+	border-radius: 0 0 5px 5px;
+	padding: 10px 40px 0;
+}
+
+/* Tablet */
+
+.device-tablet {
+	padding: 0 7px;
+	border: 1px solid #9B9B9B;
+	border-radius: 5px;
+}
+
+.device-tablet::before,
+.device-tablet::after {
+	content: '';
+	display: block;
+	border: 1px solid #9B9B9B;
+	border-radius: 100%;
+}
+
+.device-tablet::before {
+	width: 1px;
+	height: 1px;
+	margin: 5px auto 6px;
+}
+
+.device-tablet::after {
+	width: 5px;
+	height: 5px;
+	margin: 3px auto;
+}
+
+.device-tablet-content {
+	border: 1px solid #B8B8B8;
+	width: 63px;
+	height: 94px;
+	padding: 7px;
+}
+
+/* Mobile */
+.device-mobile {
+	padding: 0 4px;
+	border: 1px solid #9B9B9B;
+	border-radius: 7px;
+}
+
+.device-mobile::before,
+.device-mobile::after {
+	content: '';
+	display: block;
+	border: 1px solid #9B9B9B;
+	border-radius: 100%;
+}
+
+.device-mobile::before {
+	width: 1px;
+	height: 1px;
+	margin: 4px auto 0;	
+}
+
+.device-mobile::after {
+	width: 7px;
+	height: 7px;
+	margin: 4px auto 3px;
+}
+
+.device-mobile-speaker {
+	width: 9px;
+	height: 1px;
+	border: 1px solid #9B9B9B;
+	border-radius: 3px;
+	margin: 2px auto 4px;
+}
+
+.device-mobile-content {
+	padding: 7px 5px;
+	width: 36px;
+	height: 70px;
+	border: 1px solid #B8B8B8;
+}
