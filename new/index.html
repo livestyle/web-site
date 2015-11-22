@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<title>LiveStyle – the first bi-directional real-time edit tool for CSS, LESS and SCSS</title>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400" />
 	<link rel="stylesheet" href="./css/main.css" />
 </head>
 <body>
@@ -52,8 +53,11 @@
 					</div>
 
 					<div class="browser__content">
-						<div class="browser__content-el1">Hello world!</div>
-						<div class="browser__content-el2">A web-page example</div>
+						<div class="sample-content">
+							<h4 class="sample-content__title">Ayyo Movies launched a&nbsp;new design of&nbsp;Smart&nbsp;TV application</h4>
+							<img src="./i/ayyo-image.jpg" height="494" width="740" alt="" class="sample-content__image" />
+							<p>The main goal of&nbsp;the update&nbsp;&mdash; to&nbsp;create a&nbsp;new interface to&nbsp;the Smart TV&nbsp;applications, based on&nbsp;user behavior in&nbsp;the old version Ayyo simultaneously changing all the technical background&nbsp;is. Now, instead of&nbsp;the endless windows with films, the application consists of&nbsp;four sections, corresponding to&nbsp;the four types of&nbsp;audience.</p>
+						</div>
 					</div>
 
 					<div class="browser__devtools">
@@ -109,27 +113,51 @@
 			<div class="device-list">
 				<div class="device device-laptop">
 					<div class="device-laptop-screen">
-						<div class="device-laptop-content device-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dolore eligendi quibusdam cum modi fuga nesciunt vero similique doloribus tenetur!</div>
+						<div class="device-laptop-content device-content">
+							<div class="sample-content">
+								<i class="sample-content__logo"></i>
+								<h4 class="sample-content__title">Ayyo Movies launched a&nbsp;new design of&nbsp;Smart&nbsp;TV application</h4>
+								<p>The main goal of&nbsp;the update&nbsp;&mdash; to&nbsp;create a&nbsp;new interface to&nbsp;the Smart TV&nbsp;applications, based on&nbsp;user behavior in&nbsp;the old version Ayyo simultaneously changing all the technical background&nbsp;is. Now, instead of&nbsp;the endless windows with films, the application consists of&nbsp;four sections, corresponding to&nbsp;the four types of&nbsp;audience.</p>
+							</div>
+						</div>
 					</div>
 					<div class="device-laptop-body"></div>
-					<div class="device-label">Another browser</div>
+					<div class="device-label"><span class="device-label-content">Another browser</span></div>
 				</div>
 
 				<div class="device device-vm">
 					<i class="device-vm-app-icons"></i>
-					<div class="device-vm-content device-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dolore eligendi quibusdam cum modi fuga nesciunt vero similique doloribus tenetur!</div>
-					<div class="device-label">Virtual Machine</div>
+					<div class="device-vm-content device-content">
+						<div class="sample-content">
+							<i class="sample-content__logo"></i>
+							<h4 class="sample-content__title">Ayyo Movies launched a&nbsp;new design of&nbsp;Smart&nbsp;TV application</h4>
+							<p>The main goal of&nbsp;the update&nbsp;&mdash; to&nbsp;create a&nbsp;new interface to&nbsp;the Smart TV&nbsp;applications, based on&nbsp;user behavior in&nbsp;the old version Ayyo simultaneously changing all the technical background&nbsp;is. Now, instead of&nbsp;the endless windows with films, the application consists of&nbsp;four sections, corresponding to&nbsp;the four types of&nbsp;audience.</p>
+						</div>
+					</div>
+					<div class="device-label"><span class="device-label-content">Virtual Machine</span></div>
 				</div>
 
 				<div class="device device-tablet">
-					<div class="device-tablet-content device-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dolore eligendi quibusdam cum modi fuga nesciunt vero similique doloribus tenetur!</div>
-					<div class="device-label">Tablets</div>
+					<div class="device-tablet-content device-content">
+						<div class="sample-content">
+							<i class="sample-content__logo"></i>
+							<h4 class="sample-content__title">Ayyo Movies launched a&nbsp;new design of&nbsp;Smart&nbsp;TV application</h4>
+							<p>The main goal of&nbsp;the update&nbsp;&mdash; to&nbsp;create a&nbsp;new interface to&nbsp;the Smart TV&nbsp;applications, based on&nbsp;user behavior in&nbsp;the old version Ayyo simultaneously changing all the technical background&nbsp;is. Now, instead of&nbsp;the endless windows with films, the application consists of&nbsp;four sections, corresponding to&nbsp;the four types of&nbsp;audience.</p>
+						</div>
+					</div>
+					<div class="device-label"><span class="device-label-content">Tablets</span></div>
 				</div>
 
 				<div class="device device-mobile">
 					<div class="device-mobile-speaker"></div>
-					<div class="device-mobile-content device-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dolore eligendi quibusdam cum modi fuga nesciunt vero similique doloribus tenetur!</div>
-					<div class="device-label">Mobile phones</div>
+					<div class="device-mobile-content device-content">
+						<div class="sample-content">
+							<i class="sample-content__logo"></i>
+							<h4 class="sample-content__title">Ayyo Movies launched a&nbsp;new design of&nbsp;Smart&nbsp;TV application</h4>
+							<p>The main goal of&nbsp;the update&nbsp;&mdash; to&nbsp;create a&nbsp;new interface to&nbsp;the Smart TV&nbsp;applications, based on&nbsp;user behavior in&nbsp;the old version Ayyo simultaneously changing all the technical background&nbsp;is. Now, instead of&nbsp;the endless windows with films, the application consists of&nbsp;four sections, corresponding to&nbsp;the four types of&nbsp;audience.</p>
+						</div>
+					</div>
+					<div class="device-label"><span class="device-label-content">Mobile phones</span></div>
 				</div>
 			</div>
 			<div class="layout-assets">
@@ -155,13 +183,10 @@
 					</div>
 
 					<div class="browser__content">
-						<div class="browser__content-el1">Hello world!</div>
-						<div class="browser__content-el2">A web-page example</div>
-					</div>
-
-					<div class="browser__devtools">
-						<div class="browser__devtools-style-pane">
-							<span class="browser__devtools-style-pane-file">style.min.css</span>
+						<div class="sample-content">
+							<i class="sample-content__logo"></i>
+							<h4 class="sample-content__title">Ayyo Movies launched a&nbsp;new design of&nbsp;Smart&nbsp;TV application</h4>
+							<p>The main goal of&nbsp;the update&nbsp;&mdash; to&nbsp;create a&nbsp;new interface to&nbsp;the Smart TV&nbsp;applications, based on&nbsp;user behavior in&nbsp;the old version Ayyo simultaneously changing all the technical background&nbsp;is. Now, instead of&nbsp;the endless windows with films, the application consists of&nbsp;four sections, corresponding to&nbsp;the four types of&nbsp;audience.</p>
 						</div>
 					</div>
 				</div>

@@ -206,6 +206,7 @@
 	right: 250px;
 	bottom: 0;
 	border-bottom-left-radius: 6px;
+	overflow: hidden;
 }
 
 .browser__devtools {

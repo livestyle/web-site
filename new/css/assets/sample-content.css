@@ -1,0 +1,30 @@
+.sample-content {
+	width: 400px;
+	margin: 0 auto;
+	font-family: 'Playfair Display', georgia, serif;
+	line-height: 1.5;
+	position: relative;
+}
+
+.sample-content__title {
+	font-size: 1.9em;
+	margin-bottom: 25px;
+	font-weight: normal;
+	line-height: 1.3;
+	margin-top: 12px;
+}
+
+.sample-content__image {
+	width: 370px;
+	height: auto;
+	margin-bottom: 25px;
+}
+
+.sample-content__logo {
+	width: 100px;
+	height: 22px;
+	display: inline-block;
+	background: url(../../i/ayyo-logo.svg) no-repeat;
+	background-size: contain;
+	margin-top: 25px;
+}
