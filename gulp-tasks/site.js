@@ -3,17 +3,17 @@
  */
 'use strict';
 
-import fs from 'fs';
-import path from 'path';
-import through from 'through2';
-import extend from 'xtend';
-import marked from 'marked';
-import eco from 'eco';
-import ssg from 'static-site-generator';
-import htmlTransform from 'html-transform';
-import combine from 'stream-combiner';
-import highlight from 'highlight.js';
-import imageSize from 'image-size';
+var fs = require('fs');
+var path = require('path');
+var through = require('through2');
+var extend = require('xtend');
+var marked = require('marked');
+var eco = require('eco');
+var ssg = require('static-site-generator');
+var htmlTransform = require('html-transform');
+var combine = require('stream-combiner2');
+var highlight = require('highlight.js');
+var imageSize = require('image-size');
 
 var htmlparser = htmlTransform.htmlparser;
 marked.setOptions({
@@ -22,12 +22,15 @@ marked.setOptions({
 	}
 });
 
-export default function(src, dest, options) {
+ssg.render.register('md', ctx => new Buffer(marked(ctx.content.toString())));
+ssg.render.register('eco', (ctx, file) => new Buffer(eco.render(file.contents.toString(), ctx)));
+
+module.exports = function(src, dest, options) {
 	options = extend({
 		cwd: path.resolve(__dirname, '../src'),
 		context: {
 			site: {
-				title: 'Emmet LiveStyle — bi-directional live edit tool for CSS, LESS and SCSS'
+				title: 'Emmet LiveStyle — the first bi-directional real-time edit tool for CSS, LESS and SCSS'
 			},
 			css() {
 				return [].concat(
@@ -46,15 +49,7 @@ export default function(src, dest, options) {
 					throw new Error('No quick tour code found');
 				}
 
-				return utils.getOuterHTML(node);;
-			}
-		},
-		renderer: {
-			'md': function(ctx) {
-				return new Buffer(marked(ctx.content.toString()));
-			},
-			'eco': function(ctx, file) {
-				return new Buffer(eco.render(file.contents.toString(), ctx));
+				return utils.getOuterHTML(node);
 			}
 		}
 	}, options || {});
@@ -82,7 +77,7 @@ export default function(src, dest, options) {
 		}
 	};
 
-	return combine(
+	return combine.obj(
 		ssg.src(src, options),
 		ssg.generate(options),
 		// add cache-busting prefix for static files

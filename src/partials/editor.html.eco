@@ -1,0 +1,14 @@
+<div class="editor">
+	<div class="app-icon__group"><i class="app-icon"></i><i class="app-icon"></i><i class="app-icon"></i>
+	</div>
+	<div class="editor__title-bar"></div>
+	<section class="editor__tab-bar">
+		<span class="editor__tab" data-source="local">layout.css</span>
+		<% if @allTabs: %>
+			<span class="editor__tab" data-source="usb">usb/page.css</span>
+			<span class="editor__tab" data-source="ftp">ftp://css/forms.css</span>
+			<span class="editor__tab" data-source="smb">smb://work/cv.css</span>
+			<span class="editor__tab" data-source="untitled">untitled</span>
+		<% end %>
+	</section>
+</div>

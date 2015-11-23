@@ -24,7 +24,7 @@
 	width: 100px;
 	height: 22px;
 	display: inline-block;
-	background: url(../../i/ayyo-logo.svg) no-repeat;
+	background: url(/i/ayyo-logo.svg) no-repeat;
 	background-size: contain;
 	margin-top: 25px;
 }

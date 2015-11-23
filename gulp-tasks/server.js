@@ -2,10 +2,11 @@
  * A testing web-server for LiveStyle web-site
  */
 'use strict';
-import connect from 'connect';
-import serveStatic from 'serve-static';
+var connect = require('connect');
+var serveStatic = require('serve-static');
 
-export default function(docroot, port=8080) {
+module.exports = function(docroot, port) {
+	port = port || 8000;
 	var app = connect()
 	.use((req, res, next) => {
 		req.url = req.url.replace(/^\/\-\/\w+/, '');

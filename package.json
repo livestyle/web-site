@@ -32,7 +32,7 @@
     "postcss-import": "^7.0.0",
     "serve-static": "^1.10.0",
     "static-site-generator": "sergeche/static-site-generator",
-    "stream-combiner": "^0.2.2",
+    "stream-combiner2": "^1.1.1",
     "through2": "^2.0.0",
     "vinyl-buffer": "^1.0.0",
     "watchify": "^3.4.0",

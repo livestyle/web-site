@@ -1,16 +1,18 @@
-import path from 'path';
-import buffer from 'vinyl-buffer';
-import through from 'through2';
-import extend from 'xtend';
-import gulp from 'gulp';
-import sourcemaps from 'gulp-sourcemaps';
-import postcss from 'gulp-postcss';
-import minify from 'gulp-minify-css';
-import uglify from 'gulp-uglify';
-import gzip from 'gulp-gzip';
-import jsBundle from './gulp-tasks/js-bundle';
-import site from './gulp-tasks/site';
-import server from './gulp-tasks/server';
+'use strict';
+
+var path = require('path');
+var buffer = require('vinyl-buffer');
+var through = require('through2');
+var extend = require('xtend');
+var gulp = require('gulp');
+var sourcemaps = require('gulp-sourcemaps');
+var postcss = require('gulp-postcss');
+var minify = require('gulp-minify-css');
+var uglify = require('gulp-uglify');
+var gzip = require('gulp-gzip');
+var jsBundle = require('./gulp-tasks/js-bundle');
+var site = require('./gulp-tasks/site');
+var server = require('./gulp-tasks/server');
 
 const isWatching = ~process.argv.indexOf('watch') || ~process.argv.indexOf('--watch');
 const production = ~process.argv.indexOf('--production');
@@ -44,7 +46,7 @@ gulp.task('server', () => server('./out'));
 
 gulp.task('watch', ['build', 'server'], () => {
 	gulp.watch('js/**/*.js', srcOpt, ['js']);
-	gulp.watch('**/*.html', srcOpt, ['html']);
+	gulp.watch(['www/**/*.*', '!**/*.{css,js}'], srcOpt, ['site']);
 	gulp.watch('css/**', srcOpt, ['css']);
 });
 

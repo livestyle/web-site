@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<title><%= @document.title or @site.title %></title>
 	<% for href in @css(): %>
 		<link rel="stylesheet" href="<%= href %>" />
@@ -10,12 +11,6 @@
 <body>
 	<div class="layout">
 		<%- @content %>
-		<footer class="page-footer">
-			<div class="layout__wrap">
-				<p>Support: <a href="mailto:info@emmet.io">info@emmet.io</a></p>
-				<p>Found a bug in LiveStyle? <a href="https://github.com/livestyle/issues/issues">Submit an issue</a>.</p>
-			</div>
-		</footer>
 	</div>
 </body>
 </html>
