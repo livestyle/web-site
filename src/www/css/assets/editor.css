@@ -64,3 +64,8 @@
 .editor__tab[data-source="untitled"] {
 	background: #B5AB00;
 }
+
+.editor .code {
+	padding: 10px;
+	font-size: 1.2em;
+}

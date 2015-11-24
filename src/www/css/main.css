@@ -3,6 +3,7 @@
 @import url(./assets/livestyle-popup.css);
 @import url(./assets/devices.css);
 @import url(./assets/sample-content.css);
+@import url(./assets/code.css);
 
 body {
 	padding: 0;
@@ -264,7 +265,6 @@ a:link:hover {
 	height: 100%;
 	width: 400px;
 }
-
 
 .layout-content_features {
 	padding: 33px 0;

@@ -1,5 +1,38 @@
 ---
 layout: main
+
+editorCode1:
+  body:
+    padding: 10px
+    color: red
+    font-size: 15px
+  h1:
+    font-size: 3em
+
+editorCode2:
+  body:
+    padding: 10px
+    color: blue
+    font-size: 20px
+    background: darkblue
+  h1:
+    font-size: 3em
+
+editorCode3:
+  body:
+    padding: 10px
+    color: blue
+    font-size: 20px
+    background: '#fff'
+  h1:
+    font-size: 3em
+
+browserCode:
+  body:
+   font-family: arial
+   color: '#000'
+   background: '#fff'
+   padding: 10px
 ---
 <section class="layout-container layout-container_bg1">
 	<div class="layout-content">
@@ -22,8 +55,8 @@ layout: main
 		<h2>Bi-directional</h2>
 		<p>Changes are transmitted from the editor to the browser and the browser into the editor.</p>
 		<div class="layout-assets">
-			<%- @partial('browser') %>
-			<%- @partial('editor') %>
+			<%- @partial('browser', code: @document.browserCode) %>
+			<%- @partial('editor', code: @document.editorCode1) %>
 		</div>
 	</div>
 </section>
@@ -34,7 +67,7 @@ layout: main
 		<p>In LiveStyle, you connect browser style sheets with files from your editor. It gives you unmatched flexibility: you can use files from your hard drive, USB, FTP, network mount or event new, unsaved files.</p>
 
 		<div class="layout-assets">
-			<%- @partial('editor', allTabs: true) %>
+			<%- @partial('editor', allTabs: true, code: @document.editorCode2) %>
 		</div>
 
 		<p class="comment">And you can even edit your live web-site.</p>
@@ -84,7 +117,7 @@ layout: main
 		</div>
 		<div class="layout-assets">
 			<%- @partial('browser', remoteView: true) %>
-			<%- @partial('editor') %>
+			<%- @partial('editor', code: @document.editorCode3) %>
 		</div>
 	</div>
 

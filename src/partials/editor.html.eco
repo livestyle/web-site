@@ -11,4 +11,7 @@
 			<span class="editor__tab" data-source="untitled">untitled</span>
 		<% end %>
 	</section>
+	<section class="code" data-theme="dark">
+		<%- @renderCSS(@code) if @code %>
+	</section>
 </div>

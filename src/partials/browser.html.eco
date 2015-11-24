@@ -35,6 +35,9 @@
 	<div class="browser__devtools">
 		<div class="browser__devtools-style-pane">
 			<span class="browser__devtools-style-pane-file">style.min.css</span>
+			<section class="code" data-theme="light">
+				<%- @renderCSS(@code) if @code %>
+			</section>
 		</div>
 	</div>
 </div>

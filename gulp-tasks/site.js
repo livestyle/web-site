@@ -39,6 +39,7 @@ module.exports = function(src, dest, options) {
 					this.document.css || []
 				).filter(Boolean);
 			},
+			renderCSS: require('./assets/render-css'),
 			quickTour() {
 				var qtPath = path.resolve(__dirname, '../node_modules/quick-tour/index.html');
 				var contents = fs.readFileSync(qtPath, 'utf8');
