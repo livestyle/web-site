@@ -45,9 +45,9 @@ gulp.task('demo', () => gulp.src('./demo/**', {base: './'}).pipe(gulp.dest('./ou
 gulp.task('server', () => server('./out'));
 
 gulp.task('watch', ['build', 'server'], () => {
-	gulp.watch('js/**/*.js', srcOpt, ['js']);
-	gulp.watch(['www/**/*.*', '!**/*.{css,js}'], srcOpt, ['site']);
-	gulp.watch('css/**', srcOpt, ['css']);
+	gulp.watch('js/**/*.js', srcOpt, ['js'])
+	gulp.watch('css/**/*.css', srcOpt, ['css']);
+	gulp.watch('**/*.{html,eco}', srcOpt, ['site']);
 });
 
 gulp.task('site', () => site(['www/**/*.*', '!**/*.{css,js}'], '../out'));

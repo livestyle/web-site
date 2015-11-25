@@ -33,26 +33,11 @@ function jsBundle(file, options) {
 	options = options || {};
 
 	if (!_bundles[file.path]) {
-		options = extend({
-			debug: true,
-			detectGlobals: false
-		}, options);
+		options = makeOptions(file, options);
 
-		if (options.standalone === true) {
-			options.standalone = path.basename(file.path)
-				.replace(/\.\w+/, '')
-				.replace(/\-(\w)/g, function(str, c) {
-					return c.toUpperCase();
-				});
-		}
-
+		var b = browserify(options);
 		if (options.watch) {
-			options = extend(options, watchify.args);
-		}
-
-		var b = browserify(file.path, options);
-		if (options.watch) {
-			b = watchify(b);
+			b.plugin(watchify);
 		}
 
 		b._babelHelpers = [];
@@ -73,6 +58,31 @@ function jsBundle(file, options) {
 		this.push(iifeEnd);
 		next();
 	}));
+}
+
+function makeOptions(file, options) {
+	options = extend({
+		entries: [file.path],
+		debug: false,
+		detectGlobals: false
+	}, options || {});
+
+	if (options.standalone === true) {
+		options.standalone = path.basename(file.path)
+			.replace(/\.\w+/, '')
+			.replace(/\-(\w)/g, function(str, c) {
+				return c.toUpperCase();
+			});
+	}
+
+	if (options.watch) {
+		options = extend(options, {
+			cache: {},
+			packageCache: {}
+		});
+	}
+
+	return options;
 }
 
 function babelify(usedHelpers, options) {

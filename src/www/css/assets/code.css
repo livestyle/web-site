@@ -50,6 +50,24 @@
 	color: #96b5b4;
 }
 
+.code-highlight-parent {
+	position: relative;
+	display: inline-block;
+}
+
+.code-highlight {
+	position: absolute;
+	top: -2px;
+	right: -4px;
+	bottom: -2px;
+	left: -4px;
+	border-radius: 4px;
+	background: #F1C40F;
+	z-index: -1;
+	display: inline-block;
+	box-shadow: 0 0 6px #F1C40F;
+}
+
 @keyframes code-caret-blink {
 	from { opacity: 1; }
 	to { opacity: 0; }

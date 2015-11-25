@@ -1,0 +1,44 @@
+.debug-controls {
+	padding-top: 20px;
+	position: absolute;
+	overflow: hidden;
+	top: 100%;
+	width: 100%;
+	left: 0;
+	text-align: left;
+}
+
+.debug-controls [name=playback] {
+	margin-right: 20px;
+	font-size: 1.5em;
+}
+
+.debug-controls [name=playback]::before {
+	content: 'Play';
+}
+
+.debug-controls [name=playback].playing::before {
+	content: 'Pause';
+}
+
+.debug-controls [name=progress] {
+	width: 500px;
+	margin-right: 20px;
+	position: absolute;
+	left: 100px;
+	margin-top: 13px;
+}
+
+.debug-controls [name=timecode] {
+	position: absolute;
+	left: 630px;
+	margin-top: 10px;
+}
+
+.debug-rect {
+	position: absolute;
+	display: block;
+	border: 1px solid rgba(255, 0, 0, 0.5);
+	margin: -1px;
+	z-index: 30;
+}

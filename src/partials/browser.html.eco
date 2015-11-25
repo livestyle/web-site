@@ -16,9 +16,13 @@
 		<% unless @remoteView: %>
 			<section class="livestyle-popup__main">
 				<h4 class="livestyle-popup__title">Enable LiveStyle</h4>
-				<span class="livestyle-popup__toggler"></span>
-				<div class="livestyle-popup__browser-file">style.min.css</div>
-				<div class="livestyle-popup__editor-file">layout.css</div>
+				<span class="livestyle-popup__toggler">
+					<span class="livestyle-popup__toggler-knob"></span>
+				</span>
+				<div class="livestyle-popup__files">
+					<div class="livestyle-popup__browser-file">style.min.css</div>
+					<div class="livestyle-popup__editor-file">layout.css</div>
+				</div>
 			</section>
 		<% else: %>
 			<section class="livestyle-popup__rv">

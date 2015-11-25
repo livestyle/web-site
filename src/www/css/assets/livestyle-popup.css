@@ -9,7 +9,7 @@
 	box-shadow: 0px 2px 13px 0px rgba(0,0,0,0.30);
 	font-family: Lato, arial, sans-serif;
 	color: #2F485F;
-	transform-origin: 200px -5px;
+	transform-origin: 215px -5px;
 }
 
 .livestyle-popup::before {
@@ -53,11 +53,12 @@
 	background: #344a5d;
 	color: #26bb9d;
 	border-radius: 8px;
+	overflow: hidden;
 	transition-property: background-color, color;
 	transition-duration: 0.2s;
 }
 
-.livestyle-popup__toggler::after {
+.livestyle-popup__toggler-knob {
 	width: 12px;
 	height: 12px;
 	content: '';
@@ -67,17 +68,36 @@
 	position: absolute;
 	top: 2px;
 	right: 2px;
-	transition: transform 0.2s;
+	transition-property: transform, background-color;
+	transition-duration: 0.2s;
 }
 
-.livestyle-popup__toggler::before {
-	content: 'ON';
+.livestyle-popup__toggler-knob::before,
+.livestyle-popup__toggler-knob::after {
 	position: absolute;
-	top: 3px;
-	left: 9px;
+	top: 1px;
 	font-size: 9px;
-	transition: transform 0.2s;
 	line-height: 1;
+}
+
+.livestyle-popup__toggler-knob::before {
+	content: 'ON';
+	left: -17px;
+}
+
+.livestyle-popup__toggler-knob::after {
+	content: 'OFF';
+	left: 15px;
+}
+
+.livestyle-popup__toggler_disabled {
+	background: #bdc3c7;
+	color: #fff;
+}
+
+.livestyle-popup__toggler_disabled .livestyle-popup__toggler-knob {
+	transform: translateX(-24px);
+	background: #7f8c9c;
 }
 
 .livestyle-popup__editor-file {

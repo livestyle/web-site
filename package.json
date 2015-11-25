@@ -9,13 +9,14 @@
   "author": "Sergey Chikuyonok <serge.che@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "es6-collections": "^0.5.5",
     "quick-tour": "livestyle/quick-tour"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "babel-core": "^5.8.24",
     "babel-runtime": "^5.8.25",
-    "browserify": "^11.1.0",
+    "browserify": "^12.0.0",
     "connect": "^3.4.0",
     "eco": "^1.1.0-rc-3",
     "gulp": "^3.9.0",
@@ -35,7 +36,7 @@
     "stream-combiner2": "^1.1.1",
     "through2": "^2.0.0",
     "vinyl-buffer": "^1.0.0",
-    "watchify": "^3.4.0",
+    "watchify": "^3.6.0",
     "xtend": "^4.0.0"
   }
 }

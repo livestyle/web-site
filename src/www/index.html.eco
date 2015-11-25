@@ -4,7 +4,7 @@ layout: main
 editorCode1:
   body:
     padding: 10px
-    color: red
+    color: '[#000]'
     font-size: 15px
   h1:
     font-size: 3em
@@ -29,8 +29,8 @@ editorCode3:
 
 browserCode:
   body:
-   font-family: arial
-   color: '#000'
+   font-family: serif
+   color: '[#000]'
    background: '#fff'
    padding: 10px
 ---
@@ -55,8 +55,10 @@ browserCode:
 		<h2>Bi-directional</h2>
 		<p>Changes are transmitted from the editor to the browser and the browser into the editor.</p>
 		<div class="layout-assets">
+			<i class="spark"></i>
 			<%- @partial('browser', code: @document.browserCode) %>
 			<%- @partial('editor', code: @document.editorCode1) %>
+			<%- @partial('debug-controls') %>
 		</div>
 	</div>
 </section>

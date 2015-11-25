@@ -39,6 +39,13 @@ module.exports = function(src, dest, options) {
 					this.document.css || []
 				).filter(Boolean);
 			},
+			js() {
+				return [].concat(
+					this.site.js || [], 
+					this.meta.js || [], 
+					this.document.js || []
+				).filter(Boolean);
+			},
 			renderCSS: require('./assets/render-css'),
 			quickTour() {
 				var qtPath = path.resolve(__dirname, '../node_modules/quick-tour/index.html');

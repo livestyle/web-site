@@ -369,3 +369,20 @@ a:link:hover {
 .copyright a:hover {
 	color: #333;
 }
+
+.spark {
+	background-image: radial-gradient(50% 50%, #F8DE75 0%, rgba(241,195,15,0) 100%);
+	width: 45px;
+	height: 45px;
+	margin: -22px;
+	border-radius: 100%;
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	visibility: hidden;
+}
+
+.hidden {
+	display: none;
+}

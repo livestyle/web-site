@@ -12,5 +12,8 @@
 	<div class="layout">
 		<%- @content %>
 	</div>
+	<% for src in @js(): %>
+		<script src="<%= src %>"></script>
+	<% end %>
 </body>
 </html>

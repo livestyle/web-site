@@ -220,9 +220,9 @@
 
 .browser__devtools::before {
 	display: block;
-	content: 'DevTools';
 	line-height: 1.1;
 	color: #B2B2B2;
+	content: '';
 	background: #f3f3f3;
 	padding: 4px 20px;
 	border-bottom: 1px solid #ccc;
@@ -254,16 +254,20 @@
 
 .browser__devtools-style-pane::before {
 	display: block;
-	content: '';
+	content: 'DevTools';
 	height: 21px;
 	background: #f3f3f3;
 	border-bottom: 1px solid #ccc;
+	text-align: right;
+	box-sizing: border-box;
+	padding: 3px 10px;
+	color: #B2B2B2;
 }
 
 .browser__devtools-style-pane::after {
 	content: 'Styles';
 	position: absolute;
-	top: 4px;
+	top: 3px;
 	left: 5px;
 	background: #fff;
 	padding: 2px 5px;
