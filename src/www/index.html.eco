@@ -4,7 +4,7 @@ layout: main
 editorCode1:
   body:
     padding: 10px
-    color: '[#000]'
+    color: '[#000][red]'
     font-size: 15px
   h1:
     font-size: 3em
@@ -30,7 +30,7 @@ editorCode3:
 browserCode:
   body:
    font-family: serif
-   color: '[#000]'
+   color: '[#000][blue]'
    background: '#fff'
    padding: 10px
 ---
@@ -58,7 +58,6 @@ browserCode:
 			<i class="spark"></i>
 			<%- @partial('browser', code: @document.browserCode) %>
 			<%- @partial('editor', code: @document.editorCode1) %>
-			<%- @partial('debug-controls') %>
 		</div>
 	</div>
 </section>

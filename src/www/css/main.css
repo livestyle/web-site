@@ -207,6 +207,14 @@ a:link:hover {
 	display: none;
 }
 
+.layout-content_bidirectional .sample-content_edit1 {
+	color: #446AF8;
+}
+
+.layout-content_bidirectional .sample-content_edit2 {
+	color: #F73C37;
+}
+
 .layout-content_bidirectional .editor {
 	position: absolute;
 	left: 525px;

@@ -9,12 +9,7 @@ export default class StateClip extends AbstractClip {
 	constructor(elem, keyframes) {
 		super(elem);
 		this.keyframes = Object.keys(keyframes)
-		.map(key => {
-			return {
-				time: +key,
-				state: keyframes[key]
-			};
-		})
+		.map(key => ({time: +key, state: keyframes[key]}))
 		.sort((a, b) => a.time - b.time);
 		this.render(0);
 		this._prevState = null;
@@ -29,7 +24,7 @@ export default class StateClip extends AbstractClip {
 		.reduce((prev, frame) => frame.time <= time ? frame : prev, null);
 		var state = keyframe ? keyframe.state : '';
 		if (state !== this._prevState) {
-			this.elem.setAttribute('data-qt-state', state);
+			this.elem.setAttribute('data-state', state);
 			this._prevState = state;
 		}
 	}

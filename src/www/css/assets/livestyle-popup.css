@@ -100,13 +100,21 @@
 	background: #7f8c9c;
 }
 
+.livestyle-popup__files {
+	margin: 0 -10px;
+}
+
+.livestyle-popup__browser-file {
+	padding-left: 10px;
+}
+
 .livestyle-popup__editor-file {
 	background: #26bb9d;
 	color: #fff;
 	padding: 6px 10px 7px;
 	line-height: 1;
 	border-radius: 4px;
-	margin: 3px -10px 0;
+	margin: 3px 0 0;
 	position: relative;
 }
 

@@ -29,8 +29,7 @@ function line(code) {
 }
 
 function token(code, type) {
-	if (/^\[.+?\]$/.test(code)) {
-		code = `<span class="code-token-wrap">${code.slice(1, -1)}</span>`;
-	}
+	var i = 0;
+	code = code.replace(/\[(.+?)\]/g, (str, m) => `<span class="code-token-wrap${i++ ? ' hidden' : ''}">${m}</span>`);
 	return `<span class="code-token code-token_${type}">${code}</span>`;
 }
