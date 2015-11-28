@@ -61,6 +61,11 @@ export default class Timeline extends EventEmitter {
 		}
 	}
 
+	stop() {
+		this.pause();
+		this.timecode = 0;
+	}
+
 	toggle() {
 		if (this.state === 'play') {
 			this.pause();

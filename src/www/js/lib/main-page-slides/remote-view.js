@@ -43,7 +43,6 @@ export default function(timeline) {
 	}));
 
 	var kf1 = 7300;
-	console.log('add kf at', kf1);
 	timeline.add(time(kf1), new ToggleClassClip(browserContent, 'browser__content_edited'));
 	devices.forEach(device => {
 		timeline.add(time(kf1), new ToggleClassClip(device, 'device_edited'));
