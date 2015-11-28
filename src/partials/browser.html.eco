@@ -27,7 +27,9 @@
 		<% else: %>
 			<section class="livestyle-popup__rv">
 				<h4 class="livestyle-popup__title">Remote View<br /><span style="font-size:0.9em">some-name.livestyle.io</span></h4>
-				<span class="livestyle-popup__toggler livestyle-popup__toggler_disabled"></span>
+				<span class="livestyle-popup__toggler livestyle-popup__toggler_disabled">
+					<span class="livestyle-popup__toggler-knob"></span>
+				</span>
 			</section>
 		<% end %>
 	</div>

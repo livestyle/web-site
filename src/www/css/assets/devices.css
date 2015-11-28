@@ -17,6 +17,8 @@
 	display: inline-block;
 	vertical-align: middle;
 	text-align: center;
+	height: 170px;
+	position: relative;
 }
 
 .device-content {
@@ -25,22 +27,14 @@
 	font-size: 9px;
 	text-align: left;
 	overflow: hidden;
+	transition: background-color 0.5s;
+}
+
+.device_edited .device-content {
+	background: #2AB79A;
 }
 
 .device-label {
-	height: 0;
-}
-
-/* required to align label in IE */
-.device-label::before {
-	content: '.';
-	display: inline-block;
-	height: 0;
-	width: 0;
-	overflow: hidden;
-}
-
-.device-label-content {
 	position: absolute;
 	display: inline-block;
 	width: 14em;
@@ -125,6 +119,8 @@
 	height: 114px;
 	border: 1px solid #9B9B9B;
 	border-radius: 6px;
+	position: relative;
+	top: 26px;
 }
 
 .device-vm-app-icons {
@@ -175,6 +171,8 @@
 	padding: 0 7px;
 	border: 1px solid #9B9B9B;
 	border-radius: 5px;
+	position: relative;
+	top: 14px;
 }
 
 .device-tablet::before,
@@ -220,6 +218,8 @@
 	padding: 0 4px;
 	border: 1px solid #9B9B9B;
 	border-radius: 7px;
+	position: relative;
+	top: 24px;
 }
 
 .device-mobile::before,

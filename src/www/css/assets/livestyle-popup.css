@@ -143,20 +143,11 @@
 	color: #e57c2c;
 }
 
-.livestyle-popup__rv .livestyle-popup__toggler::after {
-	background: #e57c2c;
-}
-
 .livestyle-popup__rv .livestyle-popup__toggler_disabled {
 	background: #f29a26;
 	color: #fff;
 }
 
-.livestyle-popup__rv .livestyle-popup__toggler_disabled::after {
-	transform: translateX(-24px);
-}
-
-.livestyle-popup__rv .livestyle-popup__toggler_disabled::before {
-	content: 'OFF';
-	transform: translateX(9px);
+.livestyle-popup__rv .livestyle-popup__toggler_disabled  .livestyle-popup__toggler-knob {
+	background: #e57c2c;
 }

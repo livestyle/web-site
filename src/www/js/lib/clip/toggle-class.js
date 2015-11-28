@@ -10,6 +10,7 @@ export default class ToggleClassClip extends AbstractClip {
 		super(elem, 0);
 		this.classNames = className.trim().split(/\s+/);
 		this.reverse = !!reverse;
+		this._duration = 1;
 	}
 
 	_render(time) {

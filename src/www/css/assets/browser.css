@@ -209,6 +209,10 @@
 	overflow: hidden;
 }
 
+.browser__content_edited {
+	background: #2AB79A;
+}
+
 .browser__devtools {
 	position: absolute;
 	width: 250px;

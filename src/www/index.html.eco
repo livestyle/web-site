@@ -23,7 +23,7 @@ editorCode3:
     padding: 10px
     color: blue
     font-size: 20px
-    background: '#fff'
+    background: '[#ccc]'
   h1:
     font-size: 3em
 
@@ -83,37 +83,45 @@ browserCode:
 		<p>With instant real-time updates from editor and DevTools.</p>
 
 		<div class="device-list">
-			<div class="device device-laptop">
-				<div class="device-laptop-screen">
-					<div class="device-laptop-content device-content">
+			<div class="device">
+				<div class="device-laptop">
+					<div class="device-laptop-screen">
+						<div class="device-laptop-content device-content">
+							<%- @partial('sample-content') %>
+						</div>
+					</div>
+					<div class="device-laptop-body"></div>
+				</div>
+				<div class="device-label">Another browser</div>
+			</div>
+
+			<div class="device">
+				<div class="device-vm">
+					<i class="device-vm-app-icons"></i>
+					<div class="device-vm-content device-content">
 						<%- @partial('sample-content') %>
 					</div>
 				</div>
-				<div class="device-laptop-body"></div>
-				<div class="device-label"><span class="device-label-content">Another browser</span></div>
+				<div class="device-label">Virtual Machine</div>
 			</div>
 
-			<div class="device device-vm">
-				<i class="device-vm-app-icons"></i>
-				<div class="device-vm-content device-content">
-					<%- @partial('sample-content') %>
+			<div class="device">
+				<div class="device-tablet">
+					<div class="device-tablet-content device-content">
+						<%- @partial('sample-content') %>
+					</div>
 				</div>
-				<div class="device-label"><span class="device-label-content">Virtual Machine</span></div>
+				<div class="device-label">Tablets</div>
 			</div>
 
-			<div class="device device-tablet">
-				<div class="device-tablet-content device-content">
-					<%- @partial('sample-content') %>
+			<div class="device">
+				<div class="device-mobile">
+					<div class="device-mobile-speaker"></div>
+					<div class="device-mobile-content device-content">
+						<%- @partial('sample-content') %>
+					</div>
 				</div>
-				<div class="device-label"><span class="device-label-content">Tablets</span></div>
-			</div>
-
-			<div class="device device-mobile">
-				<div class="device-mobile-speaker"></div>
-				<div class="device-mobile-content device-content">
-					<%- @partial('sample-content') %>
-				</div>
-				<div class="device-label"><span class="device-label-content">Mobile phones</span></div>
+				<div class="device-label">Mobile phones</div>
 			</div>
 		</div>
 		<div class="layout-assets">
@@ -128,23 +136,23 @@ browserCode:
 		<ul class="feature-summary">
 			<li class="feature-summary__item">
 				<h3>Real-time editing</h3>
-				<p>LiveStyle updates CSS in browser immediately, as you type. No more file saving or page reloading just to see how single update affects web page.</p>
+				<p>LiveStyle updates CSS in&nbsp;browser immediately, as&nbsp;you type. No&nbsp;more file saving or&nbsp;page reloading just to&nbsp;see how single update affects web page.</p>
 			</li>
 			<li class="feature-summary__item">
-				<h3>Browser → Editor</h3>
-				<p>Ever wanted to tweak layout in DevTools and get those changes into your source code? LiveStyle is the only tool that can do this right. And it works with LESS and SCSS too.</p>
+				<h3>Browser &rarr; Editor</h3>
+				<p>Ever wanted to&nbsp;tweak layout in&nbsp;DevTools and get those changes into your source code? LiveStyle is&nbsp;the only tool that can do&nbsp;this right. And it&nbsp;works with LESS and SCSS too.</p>
 			</li>
 			<li class="feature-summary__item">
 				<h3>Use your own tools</h3>
-				<p>LiveStyle doesn’t require any special build tool or web server to work. It integrates directly into your editor and browser. <em>Currently works in Google Chrome and Sublime Text.</em></p>
+				<p>LiveStyle doesn&rsquo;t require any special build tool or&nbsp;web server to&nbsp;work. It&nbsp;integrates directly into your editor and browser. <em>Currently works in&nbsp;Google Chrome and Sublime Text.</em></p>
 			</li>
 			<li class="feature-summary__item">
 				<h3>Any scale</h3>
-				<p>LiveStyle designed to work with projects of any scale: from small single-page apps to huge web-sites like Facebook. And you can even work with your live web-site!</p>
+				<p>LiveStyle designed to&nbsp;work with projects of&nbsp;any scale: from small single-page apps to&nbsp;huge web-sites like Facebook. And you can even work with your live web-site!</p>
 			</li>
 			<li class="feature-summary__item">
 				<h3>Easy cross-browser testing</h3>
-				<p>With Remote View feature you can easily preview your local web-site on any internet-connected browser and device. With live updates from editor and DevTools.</p>
+				<p>With Remote View feature you can easily preview your local web-site on&nbsp;any internet-connected browser and device. With live updates from editor and DevTools.</p>
 			</li>
 			<li class="feature-summary__item">
 				<h3>Cross-platform</h3>
