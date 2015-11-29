@@ -47,11 +47,11 @@ export default function(timeline) {
 	var kf2 = 9000;
 	timeline.add(time(kf2), fade(elem));
 	timeline.add(time(kf2), new KeyframeClip('.editor', {
-		0:    {x: 542, y: 270, rotate: 0, opacity: 1, transition: 'inOutCubic'},
+		0:    {x: 542, y: 295, rotate: 0, opacity: 1, transition: 'inOutCubic'},
 		1500: {x: 900, y: 700, rotate: 45, opacity: 0}
 	}));
 	timeline.add(time(kf2), new KeyframeClip('.browser', {
-		0:    {x: 10, y: 270, rotate: 0, opacity: 1, transition: 'inOutCubic'},
+		0:    {x: 10, y: 295, rotate: 0, opacity: 1, transition: 'inOutCubic'},
 		1500: {x: -365, y: 700, rotate: -45, opacity: 0}
 	}));
 	devices.forEach((device, i) => {
