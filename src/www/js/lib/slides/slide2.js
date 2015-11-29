@@ -19,13 +19,13 @@ export default function(timeline) {
 	timeline.add(time(0), new TextRevealClip(text, {duration: 3000}));
 
 	timeline.add(time(400), new KeyframeClip(root.querySelector('.browser'), {
-		0:    {x: -365, y: 700, rotate: -45, transition: 'inOutCubic'},
-		1500: {x: -65, y: 300, rotate: 0}
+		0:    {x: -365, y: 700, rotate: -45, opacity: 0, transition: 'inOutCubic'},
+		1500: {x: -65, y: 300, rotate: 0, opacity: 1}
 	}));
 
 	timeline.add(time(600), new KeyframeClip(root.querySelector('.editor'), {
-		0:    {x: 900, y: 700, rotate: 45, transition: 'inOutCubic'},
-		1500: {x: 580, y: 300, rotate: 0}
+		0:    {x: 900, y: 700, rotate: 45, opacity: 0, transition: 'inOutCubic'},
+		1500: {x: 580, y: 300, rotate: 0, opacity: 1}
 	}));
 
 	timeline.add(time(4000), focusRing('#qt-browser-fr1'));
@@ -33,8 +33,8 @@ export default function(timeline) {
 	timeline.add(time(4400), focusRing('#qt-browser-fr3'));
 
 	var kf1 = 6500;
-	timeline.add(time(kf1), new ToggleClassClip('#qt-browser-fr1', 'qt-hidden'));
-	timeline.add(time(kf1), new ToggleClassClip('#qt-browser-fr2', 'qt-hidden'));
-	timeline.add(time(kf1), new ToggleClassClip('#qt-browser-fr3', 'qt-hidden'));
+	timeline.add(time(kf1), new ToggleClassClip('#qt-browser-fr1', 'hidden'));
+	timeline.add(time(kf1), new ToggleClassClip('#qt-browser-fr2', 'hidden'));
+	timeline.add(time(kf1), new ToggleClassClip('#qt-browser-fr3', 'hidden'));
 	timeline.add(time(kf1), fade(elem));
 }

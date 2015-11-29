@@ -22,13 +22,13 @@ export default function(timeline) {
 
 	timeline.add(time(0), new ToggleClassClip('.browser__devtools', 'hidden'));
 	timeline.add(time(0), new KeyframeClip('.browser', {
-		0:    {x: -365, y: 700, rotate: -45, transition: 'inOutCubic'},
-		1500: {x: 225, y: 250, rotate: 0}
+		0:    {x: -365, y: 700, rotate: -45, opacity: 0, transition: 'inOutCubic'},
+		1500: {x: 225, y: 250, rotate: 0, opacity: 1}
 	}));
 
 	timeline.add(time(0), new KeyframeClip('.editor', {
-		0:    {x: 225, y: 250, rotate: 0, transition: 'inOutCubic'},
-		1500: {x: 900, y: 700, rotate: 45}
+		0:    {x: 225, y: 250, rotate: 0, opacity: 1, transition: 'inOutCubic'},
+		1500: {x: 900, y: 700, rotate: 45, opacity: 0}
 	}));
 
 	timeline.add(time(500), new TextRevealClip('#qt-slide7-tx1', 1000));
@@ -42,7 +42,7 @@ export default function(timeline) {
 
 	timeline.add(time(11000), fade(elem));
 	timeline.add(time(11000), new KeyframeClip('.browser', {
-		0:    {x: 225, y: 250, rotate: 0, transition: 'inOutCubic'},
-		1500: {x: -365, y: 700, rotate: -45}
+		0:    {x: 225, y: 250, rotate: 0, opacity: 1, transition: 'inOutCubic'},
+		1500: {x: -365, y: 700, rotate: -45, opacity: 0}
 	}));
 };

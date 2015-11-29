@@ -104,5 +104,4 @@ editorCode:
 		</div>
 	</div>
 </section>
-
 <%- @partial('debug-controls') %>

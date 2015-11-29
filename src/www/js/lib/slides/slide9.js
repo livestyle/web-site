@@ -27,8 +27,8 @@ export default function(timeline) {
 		1: 'original'
 	}));
 	timeline.add(time(50), new KeyframeClip('.browser', {
-		0:    {x: -365, y: 700, rotate: -45, transition: 'inOutCubic'},
-		2000: {x: 10, y: 295, rotate: 0}
+		0:    {x: -365, y: 700, rotate: -45, opacity: 0, transition: 'inOutCubic'},
+		2000: {x: 10, y: 295, rotate: 0, opacity: 1}
 	}));
 
 	timeline.add(time(0), new ToggleClassClip('.livestyle-popup__main', 'hidden'));
@@ -54,8 +54,8 @@ export default function(timeline) {
 	timeline.add(time(t2), new TextRevealClip('#qt-slide9-tx2', 1500));
 	devices.forEach((device, i) => {
 		timeline.add(time(t2 + i * 150), new KeyframeClip(device, {
-			0:   {y: -220, transition: 'outExpo'},
-			1000: {y: 0}
+			0:   {y: -220, opacity: 0, transition: 'outExpo'},
+			1000: {y: 0, opacity: 1}
 		}));
 	});
 

@@ -26,8 +26,8 @@ export default function(timeline) {
 	timeline.add(time(0), new ToggleClassClip(editorTokenValue2, 'hidden', true));
 	timeline.add(time(0), new TextRevealClip('#qt-slide10-tx1', 1500));
 	timeline.add(time(0), new KeyframeClip('.editor', {
-		0:    {x: 900, y: 700, rotate: 45, transition: 'inOutCubic'},
-		1500: {x: 542, y: 295, rotate: 0}
+		0:    {x: 900, y: 700, rotate: 45, opacity: 0, transition: 'inOutCubic'},
+		1500: {x: 542, y: 295, rotate: 0, opacity: 1}
 	}));
 
 	timeline.add(time(2500), new HighlightClip(editorToken), 800);
@@ -47,17 +47,17 @@ export default function(timeline) {
 	var kf2 = 9000;
 	timeline.add(time(kf2), fade(elem));
 	timeline.add(time(kf2), new KeyframeClip('.editor', {
-		0:    {x: 542, y: 270, rotate: 0, transition: 'inOutCubic'},
-		1500: {x: 900, y: 700, rotate: 45}
+		0:    {x: 542, y: 270, rotate: 0, opacity: 1, transition: 'inOutCubic'},
+		1500: {x: 900, y: 700, rotate: 45, opacity: 0}
 	}));
 	timeline.add(time(kf2), new KeyframeClip('.browser', {
-		0:    {x: 10, y: 270, rotate: 0, transition: 'inOutCubic'},
-		1500: {x: -365, y: 700, rotate: -45}
+		0:    {x: 10, y: 270, rotate: 0, opacity: 1, transition: 'inOutCubic'},
+		1500: {x: -365, y: 700, rotate: -45, opacity: 0}
 	}));
 	devices.forEach((device, i) => {
 		timeline.add(time(kf2 + i * 150), new KeyframeClip(device, {
-			0:   {y: 0, transition: 'inExpo'},
-			800: {y: -220}
+			0:   {y: 0, opacity: 1, transition: 'inExpo'},
+			800: {y: -220, opacity: 0}
 		}));
 	});
 };

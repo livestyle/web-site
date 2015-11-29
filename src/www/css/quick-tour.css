@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);
-
 @import url(assets/app-icon.css);
 @import url(assets/browser.css);
 @import url(assets/editor.css);
@@ -9,30 +7,44 @@
 @import url(assets/code.css);
 @import url(assets/sample-content.css);
 
+html, body {
+	background: #F0F4F3;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	color: #000;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 p {
 	margin-top: 0;
 }
 
 .qt {
 	position: relative;
-	background: #26bb9d;
-	overflow: hidden;
-	color: #fff;
 	font-size: 16px;
+	width: 960px;
+	height: 550px;
+	margin: 0 auto;
 	/* font-family: Tahoma, sans-serif; */
-	font-family: Lato, Tahoma, sans-serif;
+	font-family: 'helvetica neue', helvetica, arial, sans-serif;
+	font-weight: 200;
 }
 
 .qt-screen {
-	width: 960px;
-	height: 550px;
 	position: relative;
-	margin: 0 auto;
 }
 
 .qt-shade {
 	position: absolute;
-	background: #26bb9d;
+	background: #F0F4F3;
 	display: block;
 	padding: 2px;
 	margin: -2px;
@@ -46,7 +58,7 @@ p {
 	height: 100%;
 	left: -100px;
 	position: absolute;
-	background-image: linear-gradient(to right, rgba(38, 187, 157, 0.0), #26bb9d);
+	background-image: linear-gradient(to right, rgba(240, 244, 243, 0.0), #F0F4F3);
 	transition: transform 0.3s;
 	transform-origin: 100% 50%;
 }

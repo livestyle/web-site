@@ -14,8 +14,8 @@ export default function(timeline) {
 	var elem = root.querySelector('.qt-slide6');
 	
 	timeline.add(time(0), new KeyframeClip('.browser', {
-		0:    {x: 10, y: 10, rotate: 0, transition: 'inOutCubic'},
-		2000: {x: -365, y: 700, rotate: -45}
+		0:    {x: 10, y: 10, rotate: 0, opacity: 1, transition: 'inOutCubic'},
+		2000: {x: -365, y: 700, rotate: -45, opacity: 0}
 	}));
 
 	timeline.add(time(200), new KeyframeClip('.editor', {
