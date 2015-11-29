@@ -21,11 +21,13 @@ function renderSelector(sel, contents) {
 
 function renderProperty(name, value, indent) {
 	indent = indent || '    ';
-	return line(`${indent}${token(name, 2)} ${token(value, /^\d+/.test(value) ? 3 : 4)};`);
+	return line(`${indent}${token(name, 2)} ${token(value, /^\[?\d+/.test(value) ? 3 : 4)};`);
 }
 
 function line(code) {
-	return `<div class="code-line">${code}</div>`;
+	var m = code.match(/^\s+/);
+	var indent = m ? m[0] : '';
+	return `<div class="code-line">${indent}<span class="code-line-content">${code.trim()}</span></div>`;
 }
 
 function token(code, type) {

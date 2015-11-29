@@ -35,15 +35,13 @@ module.exports = function(src, dest, options) {
 			css() {
 				return [].concat(
 					this.site.css || [], 
-					this.meta.css || [], 
-					this.document.css || []
+					this.meta.css || []
 				).filter(Boolean);
 			},
 			js() {
 				return [].concat(
 					this.site.js || [], 
-					this.meta.js || [], 
-					this.document.js || []
+					this.meta.js || []
 				).filter(Boolean);
 			},
 			renderCSS: require('./assets/render-css'),

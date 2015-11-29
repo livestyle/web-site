@@ -10,7 +10,7 @@ var defaultOptions = {
 	beforeDelay: 100,          // delay before input start
 	duration: 600,             // actual text input animation duration
 	afterDelay: 100,           // delay after all characters are inserted 
-	activeClass: 'qt-tx-caret' // class name to add to element when animation is active
+	activeClass: 'code-caret'  // class name to add to element when animation is active
 };
 
 export default class TextInputClip extends AbstractClip {

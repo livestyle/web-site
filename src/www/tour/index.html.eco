@@ -1,0 +1,108 @@
+---
+layout: base
+css:
+  - '/css/quick-tour.css'
+  - '/css/debug-controls.css'
+js:
+  - '/js/quick-tour.js'
+
+browserCode:
+  body:
+    font-family: arial
+    color: '[#000][red]'
+    background: '[#fff]'
+    padding: 10px
+    font-size: '[20px]'
+
+editorCode:
+  body:
+    padding: 10px
+    color: '[#000][blue]'
+    font-size: '[15px]'
+    background: '[darkblue][#fff]'
+  h1:
+    font-size: 3em
+---
+<section class="qt">
+	<div class="qt-screen qt-invisible">
+		<div class="qt-spark"></div>
+		<div class="qt-browser-line1">
+			<svg width="215" height="199" viewBox="0 0 215 199" xmlns="http://www.w3.org/2000/svg">
+				<path d="M41.734 1.176c-110.211 74.045 20.482 196.574 172.529 196.574" stroke="#E67E22" fill="none"/>
+			</svg>
+		</div>
+
+		<div class="qt-browser-line2">
+			<svg width="134" height="179" viewBox="0 0 134 179" xmlns="http://www.w3.org/2000/svg">
+				<path d="M.121 1.5c96.605 0 132.879 93.762 132.5 178.094" stroke="#E57C2C" fill="none"/>
+			</svg>
+		</div>
+
+		<span id="qt-browser-fr1" class="qt-focus-ring"></span>
+		<span id="qt-browser-fr2" class="qt-focus-ring"></span>
+		<span id="qt-browser-fr3" class="qt-focus-ring"></span>
+
+		<%- @partial('browser', code: @document.browserCode, liveStyle: true, remoteView: true) %>
+		<%- @partial('editor', code: @document.editorCode, allTabs: true) %>
+		
+		<div class="qt-slide qt-slide_hidden qt-slide1">
+			<h3 class="qt-text-header">LiveStyle</h3>
+			<p><span class="qt-text">is a unique tool for live <em>bi-directional</em> stylesheet editing</span></p>
+		</div>
+
+		<div class="qt-slide qt-slide_hidden qt-slide2">
+			<span class="qt-text">LiveStyle integrates directly into web browser and code editor to bring you the best live edit experience.</span>
+		</div>
+
+		<div class="qt-slide qt-slide_hidden qt-slide3">
+			<span class="qt-text" id="qt-slide3-tx1">To start using LiveStyle, simply connect any CSS file from your web-page</span> <span class="qt-text" id="qt-slide3-tx2">with one of the opened stylesheet files in editor.</span>
+		</div>
+
+		<div class="qt-slide qt-slide_hidden qt-slide4">
+			<p><span class="qt-text" id="qt-slide4-tx1">Now all your editor changes are instantly pushed to&nbsp;browser.</span></p>
+			<p><span class="qt-text" id="qt-slide4-tx2">Without file saving or page reloading.</span></p>
+			<p style="margin-top: 1.5em;"><span class="qt-text" id="qt-slide4-tx3">And vice versa.</span></p>
+		</div>
+
+		<div class="qt-slide qt-slide_hidden qt-slide5">
+			<span class="qt-text" id="qt-slide5-tx1">You can connect two <em>completely different</em> stylesheets: LiveStyle transmits <em>updated properties only</em> and doesn’t overwrite entire file.</span>
+		</div>
+
+		<div class="qt-slide qt-slide_hidden qt-slide6">
+			<p><span class="qt-text" id="qt-slide6-tx1">Connecting browser and editor files gives you unmatched flexibility.</span></p>
+			<p><span class="qt-text" id="qt-slide6-tx2">You can use files from your hard drive, USB, FTP, network mount or&nbsp;even new, unsaved file.</span></p>
+		</div>
+
+		<div class="qt-slide qt-slide_hidden qt-slide7">
+			<p style="margin-bottom: 1.5em;"><span class="qt-text" id="qt-slide7-tx1">And you can even edit your <em>live web-site</em>.</span></p>
+			<p><span class="qt-text" id="qt-slide7-tx2">No special server setup required.</span></p>
+		</div>
+
+		<div class="qt-slide qt-slide_hidden qt-slide8">
+			<h3 class="qt-text-header">Remote View</h3>
+		</div>
+
+		<div class="qt-slide qt-slide_hidden qt-slide9">
+			<p><span class="qt-text" id="qt-slide9-tx1">Remote View creates a publicly available URL that points to your local web-site.</span></p>
+			<p><span class="qt-text" id="qt-slide9-tx2">Use this URL to preview local web-site on any internet-connected device or browser.</span></p>
+		</div>
+
+		<div class="qt-slide qt-slide_hidden qt-slide10">
+			<p><span class="qt-text" id="qt-slide10-tx1">With instant live updates from editor and DevTools.</span></p>
+		</div>
+
+		<div class="qt-slide qt-slide_hidden qt-slide11">
+			<p class="qt-download"><span class="qt-download__btn">Download now</span><br /><span class="qt-download__comment">It’s free!</span></p>
+			<span class="qt-play-again">Play again</span>
+		</div>
+
+		<div class="device-list">
+			<%- @partial('device/laptop') %>
+			<%- @partial('device/vm') %>
+			<%- @partial('device/tablet') %>
+			<%- @partial('device/mobile') %>
+		</div>
+	</div>
+</section>
+
+<%- @partial('debug-controls') %>

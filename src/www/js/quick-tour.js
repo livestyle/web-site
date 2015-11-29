@@ -1,36 +1,18 @@
-import quickTour from 'quick-tour';
+'use strict';
 
-var startBtn = document.querySelector('.quick-tour__btn');
-var qtDownloadBtn = document.querySelector('.qt-download__btn');
-var tour = quickTour('.qt-screen');
-var startTime = location.hash.replace('#', '');
+import Timeline from './lib/timeline';
+import animations from './lib/animations';
+import debugControls from './lib/debug-controls';
+import {toArray} from './lib/utils';
 
-startBtn.addEventListener('click', evt => {
-	evt.preventDefault();
-	evt.stopPropagation();
 
-	startBtn.className += ' quick-tour__btn_hidden';
-	setTimeout(() => {
-		setup();
-		tour.play();
-	}, 1000);
-});
+var timeline = animations(new Timeline('.qt-screen'));
+timeline.elem.classList.remove('qt-invisible');
+setupDebugControls(timeline);
 
-qtDownloadBtn.addEventListener('click', evt => {
-	document.querySelector('.download').scrollIntoView();
-});
-
-if (startTime && /^\d+$/.test(startTime)) {
-	setup();
-	tour.timecode = +startTime;
-}
-
-function setup() {
-	startBtn.style.display = 'none';
-	tour.elem.addEventListener('click', evt => {
-		var elem = evt.target;
-		if (!elem.classList.contains('qt-play-again') && elem !== qtDownloadBtn) {
-			tour.toggle();
-		}
-	});
+function setupDebugControls(timeline) {
+	var dbgElem = document.querySelector('.debug-controls');
+	if (dbgElem) {
+		debugControls(dbgElem, timeline);
+	}
 }

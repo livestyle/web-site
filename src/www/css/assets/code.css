@@ -9,6 +9,11 @@
 	height: 1.5em;
 }
 
+.code-line-content {
+	position: relative;
+	display: inline-block;
+}
+
 .code-caret::after {
 	display: inline-block;
 	width: 2px;

@@ -13,12 +13,12 @@ export default function(timeline) {
 	var root = timeline.elem;
 	var elem = root.querySelector('.qt-slide6');
 	
-	timeline.add(time(0), new KeyframeClip('.qt-browser', {
+	timeline.add(time(0), new KeyframeClip('.browser', {
 		0:    {x: 10, y: 10, rotate: 0, transition: 'inOutCubic'},
 		2000: {x: -365, y: 700, rotate: -45}
 	}));
 
-	timeline.add(time(200), new KeyframeClip('.qt-editor', {
+	timeline.add(time(200), new KeyframeClip('.editor', {
 		0:    {x: 580, y: 300, transition: 'inOutCubic'},
 		1500: {x: 225, y: 250}
 	}));
@@ -35,10 +35,10 @@ export default function(timeline) {
 		t2 += 250;
 	};
 
-	tabAnim1('.qt-editor__tab[data-source=usb]');
-	tabAnim1('.qt-editor__tab[data-source=ftp]');
-	tabAnim1('.qt-editor__tab[data-source=smb]');
-	tabAnim1('.qt-editor__tab[data-source=untitled]');
+	tabAnim1('.editor__tab[data-source=usb]');
+	tabAnim1('.editor__tab[data-source=ftp]');
+	tabAnim1('.editor__tab[data-source=smb]');
+	tabAnim1('.editor__tab[data-source=untitled]');
 
 	var t3 = 11000;
 	var tabAnim2 = sel => {
@@ -50,8 +50,8 @@ export default function(timeline) {
 	};
 
 	timeline.add(time(t3), fade(elem));
-	tabAnim2('.qt-editor__tab[data-source=untitled]');
-	tabAnim2('.qt-editor__tab[data-source=smb]');
-	tabAnim2('.qt-editor__tab[data-source=ftp]');
-	tabAnim2('.qt-editor__tab[data-source=usb]');
+	tabAnim2('.editor__tab[data-source=untitled]');
+	tabAnim2('.editor__tab[data-source=smb]');
+	tabAnim2('.editor__tab[data-source=ftp]');
+	tabAnim2('.editor__tab[data-source=usb]');
 };

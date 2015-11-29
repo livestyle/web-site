@@ -1,0 +1,9 @@
+<div class="device">
+	<div class="device-vm">
+		<i class="device-vm-app-icons"></i>
+		<div class="device-vm-content device-content">
+			<%- @partial('sample-content') %>
+		</div>
+	</div>
+	<div class="device-label">Virtual Machine</div>
+</div>

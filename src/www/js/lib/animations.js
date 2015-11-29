@@ -36,4 +36,5 @@ export default function(timeline) {
 	slide11(timeline);
 
 	timeline.timecode = 0;
+	return timeline;
 };

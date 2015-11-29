@@ -1,0 +1,9 @@
+<div class="device">
+	<div class="device-mobile">
+		<div class="device-mobile-speaker"></div>
+		<div class="device-mobile-content device-content">
+			<%- @partial('sample-content') %>
+		</div>
+	</div>
+	<div class="device-label">Mobile phones</div>
+</div>

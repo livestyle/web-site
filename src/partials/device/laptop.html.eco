@@ -1,0 +1,11 @@
+<div class="device">
+	<div class="device-laptop">
+		<div class="device-laptop-screen">
+			<div class="device-laptop-content device-content">
+				<%- @partial('sample-content') %>
+			</div>
+		</div>
+		<div class="device-laptop-body"></div>
+	</div>
+	<div class="device-label">Another browser</div>
+</div>

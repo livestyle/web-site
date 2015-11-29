@@ -1,3 +1,4 @@
+@import url(./assets/app-icon.css);
 @import url(./assets/browser.css);
 @import url(./assets/editor.css);
 @import url(./assets/livestyle-popup.css);
@@ -168,23 +169,6 @@ a:link:hover {
 
 .hero .download-btn {
 	background: #f4f4f4;
-}
-
-.app-icon__group {
-	position: absolute;
-	z-index: 10;
-	left: 10px;
-	top: 10px;
-}
-
-.app-icon {
-	width: 10px;
-	height: 10px;
-	background: #8e8e93;
-	border: 1px solid #6e6f76;
-	display: inline-block;
-	margin-right: 6px;
-	border-radius: 100%;
 }
 
 .layout-content_bidirectional .layout-assets {

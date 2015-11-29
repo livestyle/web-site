@@ -18,12 +18,12 @@ export default function(timeline) {
 
 	timeline.add(time(0), new TextRevealClip(text, {duration: 3000}));
 
-	timeline.add(time(400), new KeyframeClip(root.querySelector('.qt-browser'), {
+	timeline.add(time(400), new KeyframeClip(root.querySelector('.browser'), {
 		0:    {x: -365, y: 700, rotate: -45, transition: 'inOutCubic'},
 		1500: {x: -65, y: 300, rotate: 0}
 	}));
 
-	timeline.add(time(600), new KeyframeClip(root.querySelector('.qt-editor'), {
+	timeline.add(time(600), new KeyframeClip(root.querySelector('.editor'), {
 		0:    {x: 900, y: 700, rotate: 45, transition: 'inOutCubic'},
 		1500: {x: 580, y: 300, rotate: 0}
 	}));

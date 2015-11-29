@@ -9,11 +9,13 @@
 		<i class="browser__arrow-icon browser__arrow-icon_forward"></i>
 		<i class="browser__ls-icon"></i>
 		<i class="browser__options-icon"></i>
-		<div class="browser__address-bar">localhost:8080</div>
+		<div class="browser__address-bar">
+			<span class="browser__url">localhost:8080</span>
+		</div>
 	</div>
 
 	<div class="livestyle-popup">
-		<% unless @remoteView: %>
+		<% if @liveStyle: %>
 			<section class="livestyle-popup__main">
 				<h4 class="livestyle-popup__title">Enable LiveStyle</h4>
 				<span class="livestyle-popup__toggler">
@@ -24,8 +26,9 @@
 					<div class="livestyle-popup__editor-file">layout.css</div>
 				</div>
 			</section>
-		<% else: %>
-			<section class="livestyle-popup__rv">
+		<% end %>
+		<% if @remoteView: %>
+			<section class="livestyle-popup__rv<%= ' hidden' if @liveStyle %>">
 				<h4 class="livestyle-popup__title">Remote View<br /><span style="font-size:0.9em">some-name.livestyle.io</span></h4>
 				<span class="livestyle-popup__toggler livestyle-popup__toggler_disabled">
 					<span class="livestyle-popup__toggler-knob"></span>

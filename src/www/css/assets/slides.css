@@ -1,0 +1,85 @@
+.qt-slide {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	line-height: 1.5;
+	font-size: 21px;
+}
+
+.qt-slide_hidden {
+	margin-top: -1000px;
+}
+
+.qt-slide p {
+	margin: 0;
+}
+
+.qt-spark {
+	background-image: radial-gradient(50% 50%, #F8DE75 0%, rgba(241,195,15,0) 100%);
+	width: 45px;
+	height: 45px;
+	margin: -22px;
+	border-radius: 100%;
+	position: absolute;
+	z-index: 10;
+	left: 0;
+	top: 0;
+}
+
+.qt-slide1,
+.qt-slide8 {
+	text-align: center;
+	top: 210px;
+}
+
+.qt-slide2,
+.qt-slide6,
+.qt-slide7 {
+	text-align: center;
+	top: 65px;
+	width: 580px;
+	left: 190px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.qt-slide3,
+.qt-slide4,
+.qt-slide5 {
+	width: 305px;
+	left: 580px;
+	top: 20px;
+}
+
+.qt-slide4 {
+	width: 350px;
+}
+
+.qt-slide5 {
+	width: 350px;
+}
+
+.qt-slide6,
+.qt-slide7 {
+	width: 650px;
+	left: 155px;
+}
+
+.qt-slide8 {
+}
+
+.qt-slide9,
+.qt-slide10,
+.qt-slide11 {
+	width: 100%;
+	left: 0;
+	top: 210px;
+	text-align: center;
+}
+
+.qt-slide10 {
+	font-size: 1.8em;
+	top: 220px;
+}

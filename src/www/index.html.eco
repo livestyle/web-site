@@ -56,7 +56,7 @@ browserCode:
 		<p>Changes are transmitted from the editor to the browser and the browser into the editor.</p>
 		<div class="layout-assets">
 			<i class="spark"></i>
-			<%- @partial('browser', code: @document.browserCode) %>
+			<%- @partial('browser', code: @document.browserCode, liveStyle: true) %>
 			<%- @partial('editor', code: @document.editorCode1) %>
 		</div>
 	</div>
@@ -83,46 +83,10 @@ browserCode:
 		<p>With instant real-time updates from editor and DevTools.</p>
 
 		<div class="device-list">
-			<div class="device">
-				<div class="device-laptop">
-					<div class="device-laptop-screen">
-						<div class="device-laptop-content device-content">
-							<%- @partial('sample-content') %>
-						</div>
-					</div>
-					<div class="device-laptop-body"></div>
-				</div>
-				<div class="device-label">Another browser</div>
-			</div>
-
-			<div class="device">
-				<div class="device-vm">
-					<i class="device-vm-app-icons"></i>
-					<div class="device-vm-content device-content">
-						<%- @partial('sample-content') %>
-					</div>
-				</div>
-				<div class="device-label">Virtual Machine</div>
-			</div>
-
-			<div class="device">
-				<div class="device-tablet">
-					<div class="device-tablet-content device-content">
-						<%- @partial('sample-content') %>
-					</div>
-				</div>
-				<div class="device-label">Tablets</div>
-			</div>
-
-			<div class="device">
-				<div class="device-mobile">
-					<div class="device-mobile-speaker"></div>
-					<div class="device-mobile-content device-content">
-						<%- @partial('sample-content') %>
-					</div>
-				</div>
-				<div class="device-label">Mobile phones</div>
-			</div>
+			<%- @partial('device/laptop') %>
+			<%- @partial('device/vm') %>
+			<%- @partial('device/tablet') %>
+			<%- @partial('device/mobile') %>
 		</div>
 		<div class="layout-assets">
 			<%- @partial('browser', remoteView: true) %>

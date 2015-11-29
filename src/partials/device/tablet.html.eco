@@ -1,0 +1,8 @@
+<div class="device">
+	<div class="device-tablet">
+		<div class="device-tablet-content device-content">
+			<%- @partial('sample-content') %>
+		</div>
+	</div>
+	<div class="device-label">Tablets</div>
+</div>

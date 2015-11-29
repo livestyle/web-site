@@ -19,12 +19,12 @@ export default function(timeline) {
 	var line1 = '.qt-browser-line1 path';
 	var line2 = '.qt-browser-line2 path';
 
-	timeline.add(time(0), new KeyframeClip(root.querySelector('.qt-browser'), {
+	timeline.add(time(0), new KeyframeClip(root.querySelector('.browser'), {
 		0:    {x: -65, y: 300, transition: 'inOutCubic'},
 		2000: {x: 10, y: 10}
 	}));
 
-	timeline.add(time(1400), new KeyframeClip(root.querySelector('.qt-livestyle'), {
+	timeline.add(time(1400), new KeyframeClip(root.querySelector('.livestyle-popup'), {
 		0:   {scale: 0, transition: 'outBack'},
 		700: {scale: 1}
 	}));
@@ -51,6 +51,6 @@ export default function(timeline) {
 	timeline.add(time(kf1), fade(line2));
 
 	var kf2 = 12000;
-	timeline.add(time(kf2), new ToggleClassClip('.qt-browser-line1', 'qt-hidden'));
-	timeline.add(time(kf2), new ToggleClassClip('.qt-browser-line2', 'qt-hidden'));
+	timeline.add(time(kf2), new ToggleClassClip('.qt-browser-line1', 'hidden'));
+	timeline.add(time(kf2), new ToggleClassClip('.qt-browser-line2', 'hidden'));
 }

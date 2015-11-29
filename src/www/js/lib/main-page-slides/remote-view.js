@@ -1,6 +1,7 @@
 /**
  * A slide for “Remote View” part of main page
  */
+'use strict';
 
 import TextInputClip   from '../clip/text-input';
 import HighlightClip   from '../clip/highlight';
