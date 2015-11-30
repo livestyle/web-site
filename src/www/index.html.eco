@@ -42,7 +42,7 @@ browserCode:
 		<section class="hero">
 			<h1>LiveStyle. The first bi-directional real-time edit tool for CSS, LESS and SCSS.</h1>
 			<ul class="hero-links">
-				<li class="hero-links__item"><a href="/demo/" class="hero-link_demo">Watch the demo</a></li>
+				<li class="hero-links__item"><a href="/tour/" class="hero-link_demo">Watch the demo</a></li>
 				<li class="hero-links__item"><a href="/docs/" class="hero-link_guide">Getting started guide</a></li>
 			</ul>
 			<p><a href="/download" class="download-btn">Download App</a></p>
@@ -133,3 +133,4 @@ browserCode:
 
 	<hr />
 </section>
+<%- @partial('quick-tour-popup') %>

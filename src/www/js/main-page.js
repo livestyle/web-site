@@ -6,10 +6,26 @@ import slide1 from './lib/main-page-slides/bidirectional';
 import slide2 from './lib/main-page-slides/one-heart';
 import slide3 from './lib/main-page-slides/remote-view';
 import ViewportPlaybackTrigger from './lib/viewport-playback-trigger';
+import qtPopup from './lib/quick-tour-popup';
 
 setupSlide('.layout-content_bidirectional .layout-assets', slide1);
 setupSlide('.layout-content_one-heart .layout-assets', slide2);
 setupSlide('.layout-content_remote-view', slide3);
+
+var popup = qtPopup('.quick-tour-popup');
+
+document.querySelector('.hero-link_demo').addEventListener('click', function(evt) {
+	evt.preventDefault();
+	evt.stopPropagation();
+	popup.show(this.href);
+});
+
+document.addEventListener('keyup', evt => {
+	if (evt.keyCode === 27) { // esc key
+		popup.hide();
+	}
+});
+
 
 ///////////////////////////
 

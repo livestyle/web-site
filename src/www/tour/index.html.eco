@@ -92,7 +92,6 @@ editorCode:
 		</div>
 
 		<div class="qt-slide qt-slide_hidden qt-slide11">
-			<p class="qt-download"><span class="qt-download__btn">Download now</span><br /><span class="qt-download__comment">It’s free!</span></p>
 			<span class="qt-play-again">Play again</span>
 		</div>
 
@@ -104,4 +103,4 @@ editorCode:
 		</div>
 	</div>
 </section>
-<%- @partial('debug-controls') %>
+<%- @partial('playback-controls') %>

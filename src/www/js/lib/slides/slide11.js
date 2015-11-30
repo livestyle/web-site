@@ -9,6 +9,5 @@ function time(value) {
 }
 
 export default function(timeline) {
-	timeline.add(time(0), new TextRevealClip('.qt-download', 1500));
-	timeline.add(time(2000), fade('.qt-play-again', {direction: 'in'}));
+	timeline.add(time(0), new TextRevealClip('.qt-play-again', 500));
 };

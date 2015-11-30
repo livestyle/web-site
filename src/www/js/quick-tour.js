@@ -2,17 +2,18 @@
 
 import Timeline from './lib/timeline';
 import animations from './lib/animations';
-import debugControls from './lib/debug-controls';
+import playbackControls from './lib/playback-controls';
 import {toArray} from './lib/utils';
-
 
 var timeline = animations(new Timeline('.qt-screen'));
 timeline.elem.classList.remove('qt-invisible');
-setupDebugControls(timeline);
+playbackControls('.playback-controls', timeline);
 
-function setupDebugControls(timeline) {
-	var dbgElem = document.querySelector('.debug-controls');
-	if (dbgElem) {
-		debugControls(dbgElem, timeline);
-	}
+var startTime = location.hash.replace('#', '');
+if (!startTime) {
+	startTime = 0;
 }
+
+timeline.timecode = startTime;
+setTimeout(() => timeline.play(), 1000);
+document.addEventListener('click', evt => timeline.toggle());
