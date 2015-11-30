@@ -26,6 +26,13 @@ document.addEventListener('keyup', evt => {
 	}
 });
 
+// setup download button
+var downloadBtn = document.querySelector('.download-btn');
+if (navigator.platform.indexOf('Mac') !== -1) {
+	downloadBtn.href = downloadBtn.getAttribute('data-osx');
+} else if (navigator.platform.indexOf('Win') !== -1) {
+	downloadBtn.href = downloadBtn.getAttribute('data-win');
+}
 
 ///////////////////////////
 
