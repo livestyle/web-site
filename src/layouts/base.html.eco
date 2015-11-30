@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 	<title><%= @document.title or @site.title %></title>
 	<% for href in @css(): %>
 		<link rel="stylesheet" href="<%= href %>" />
