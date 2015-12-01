@@ -80,7 +80,7 @@ gulp.task('full', ['build'], () => {
 			threshold: '1kb',
 			gzipOptions: {level: 7}
 		}))
-		.pipe(gulp.dest(dest));
+		.pipe(dest());
 });
 
 gulp.task('build', ['js', 'site', 'css', 'demo']);
