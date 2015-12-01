@@ -15,26 +15,28 @@
 	</div>
 
 	<div class="livestyle-popup">
-		<% if @liveStyle: %>
-			<section class="livestyle-popup__main">
-				<h4 class="livestyle-popup__title">Enable LiveStyle</h4>
-				<span class="livestyle-popup__toggler">
-					<span class="livestyle-popup__toggler-knob"></span>
-				</span>
-				<div class="livestyle-popup__files">
-					<div class="livestyle-popup__browser-file">style.min.css</div>
-					<div class="livestyle-popup__editor-file">layout.css</div>
-				</div>
-			</section>
-		<% end %>
-		<% if @remoteView: %>
-			<section class="livestyle-popup__rv<%= ' hidden' if @liveStyle %>">
-				<h4 class="livestyle-popup__title">Remote View<br /><span style="font-size:0.9em">some-name.livestyle.io</span></h4>
-				<span class="livestyle-popup__toggler livestyle-popup__toggler_disabled">
-					<span class="livestyle-popup__toggler-knob"></span>
-				</span>
-			</section>
-		<% end %>
+		<div class="livestyle-popup__layer">
+			<% if @liveStyle: %>
+				<section class="livestyle-popup__main">
+					<h4 class="livestyle-popup__title">Enable LiveStyle</h4>
+					<span class="livestyle-popup__toggler">
+						<span class="livestyle-popup__toggler-knob"></span>
+					</span>
+					<div class="livestyle-popup__files">
+						<div class="livestyle-popup__browser-file">style.min.css</div>
+						<div class="livestyle-popup__editor-file">layout.css</div>
+					</div>
+				</section>
+			<% end %>
+			<% if @remoteView: %>
+				<section class="livestyle-popup__rv<%= ' hidden' if @liveStyle %>">
+					<h4 class="livestyle-popup__title">Remote View<br /><span style="font-size:0.9em">some-name.livestyle.io</span></h4>
+					<span class="livestyle-popup__toggler livestyle-popup__toggler_disabled">
+						<span class="livestyle-popup__toggler-knob"></span>
+					</span>
+				</section>
+			<% end %>
+			</div>
 	</div>
 
 	<div class="browser__content">

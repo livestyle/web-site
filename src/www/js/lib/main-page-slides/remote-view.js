@@ -29,8 +29,8 @@ export default function(timeline) {
 
 	devices.forEach((device, i) => {
 		timeline.add(time(2200 + i * 150), new KeyframeClip(device, {
-			0:   {y: 250, opacity: 0, transition: 'outExpo'},
-			700: {y: 0, opacity: 1}
+			0:   {scale: 0, transition: 'outCubic'},
+			700: {scale: 1}
 		}));
 	});
 

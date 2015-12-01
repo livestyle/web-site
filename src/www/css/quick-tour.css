@@ -171,6 +171,10 @@ p {
 	color: #000;
 }
 
+.device-label {
+	background: #F0F4F3;
+}
+
 .qt-text {
 	margin: 0 0 1.5em;
 	line-height: 1.4;

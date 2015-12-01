@@ -2,12 +2,10 @@
 	position: absolute;
 	background: #fff;
 	z-index: 10;
-	padding: 15px;
-	width: 210px;
+	width: 240px;
 	top: 63px;
 	right: 24px;
 	box-shadow: 0px 2px 13px 0px rgba(0,0,0,0.30);
-	font-family: Lato, arial, sans-serif;
 	color: #2F485F;
 	transform-origin: 215px -5px;
 }
@@ -22,6 +20,14 @@
 	position: absolute;
 	top: -5px;
 	right: 20px;
+}
+
+/* Use explicit compositing layer for better rendering in Safari */
+.livestyle-popup__layer {
+	background: inherit;
+	transform: translateZ(0);
+	position: relative;
+	padding: 15px;
 }
 
 .livestyle-popup__main {
@@ -42,6 +48,10 @@
 
 .livestyle-popup__rv .livestyle-popup__title {
 	line-height: 36px;
+	width: 160px;
+	position: relative;
+	z-index: 2;
+	background: none; /* Fixes visual bug in Safari */
 }
 
 .livestyle-popup__toggler {

@@ -9,6 +9,11 @@
 	height: 1.5em;
 }
 
+.code-line_up {
+	position: relative;
+	z-index: 2;
+}
+
 .code-line-content {
 	position: relative;
 	display: inline-block;
@@ -41,6 +46,7 @@
 
 .code[data-theme=dark] {
 	color: #c0c5ce;
+	background: inherit;
 }
 
 .code[data-theme=dark] .code-token_1 {

@@ -1,6 +1,7 @@
 /* Common device data */
 .device-list {
 	position: relative;
+	z-index: 1;
 	text-align: justify;
 	max-width: 900px;
 	margin: 0 -60px 40px;
@@ -20,6 +21,7 @@
 	height: 170px;
 	position: relative;
 	color: #9b9b9b;
+	-webkit-font-smoothing: subpixel-antialiased;
 }
 
 .device-content {

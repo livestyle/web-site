@@ -11,7 +11,7 @@ import KeyframeClip    from '../clip/keyframe';
 import {toArray}       from '../utils';
 
 export default function(timeline) {
-	var $ = sel => timeline.elem.querySelector(sel);
+	var $ = (sel, ctx=timeline.elem) => ctx.querySelector(sel);
 	var time = v => v;  // for easier tweaking and debugging
 
 	var spark = $('.spark');
@@ -19,7 +19,8 @@ export default function(timeline) {
 	var lsPopupToggler = $('.livestyle-popup__toggler');
 	var lsPopupFiles = $('.livestyle-popup__files');
 	var sampleContent = $('.browser .sample-content');
-	var editorToken = $('.editor .code-line:nth-of-type(3) .code-token_4');
+	var editorLine = $('.editor .code-line:nth-of-type(3)');
+	var editorToken = $('.code-token_4', editorLine);
 	var editorTokenColors = toArray(editorToken.querySelectorAll('.code-token-wrap'));
 	var browserToken = $('.browser .code-line:nth-of-type(3) .code-token_4');
 	var browserTokenColors = toArray(browserToken.querySelectorAll('.code-token-wrap'));
@@ -29,6 +30,7 @@ export default function(timeline) {
 
 	// initial setup
 	spark.style.visibility = 'visible';
+	editorLine.classList.add('code-line_up');
 	lsPopupToggler.classList.add('livestyle-popup__toggler_disabled');
 
 	// setup animations

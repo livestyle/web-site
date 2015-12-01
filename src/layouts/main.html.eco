@@ -3,7 +3,6 @@ layout: base
 css:
   - 'https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic'
   - '/css/main.css'
-  - '/css/debug-controls.css'
 
 js:
   - '/js/main-page.js'

@@ -7,6 +7,7 @@
 	box-shadow: 0px 8px 30px 0px rgba(0,0,0,0.6);
 	font-family: 'Helvetica Neue', tahoma, sans-serif;
 	font-size: 11px;
+	-webkit-font-smoothing: subpixel-antialiased;
 	/* overflow: hidden; */
 }
 
@@ -47,6 +48,8 @@
 	padding: 7px 10px;
 	float: left;
 	background: #2b303b;
+	will-change: transform;
+	font-weight: normal;
 }
 
 .editor__tab[data-source="usb"] {
