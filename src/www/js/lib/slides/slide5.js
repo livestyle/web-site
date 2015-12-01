@@ -23,8 +23,8 @@ export default function(timeline) {
 	var editorToken = $('.editor .code-line:nth-of-type(4) .code-token_3');
 	var browserToken = $('.browser .code-line:nth-of-type(4) .code-token-wrap');
 
-	var path1 =   [[710, 433], [710, 251], [628, 145], [486, 145]];
-	var path2 =   [[270, 128], [180, 128], [155, 322], [300, 360]];
+	var path1   = [[710, 433], [710, 251], [628, 145], [486, 145]];
+	var path2   = [[270, 128], [180, 128], [155, 322], [300, 360]];
 	var path2_2 = [[270, 128], [180, 128], [155, 347], [300, 385]];
 
 	editorLine.classList.add('hidden');
@@ -37,10 +37,10 @@ export default function(timeline) {
 		afterDelay: 200,
 		duration: 500
 	}));
-	timeline.add(time(7500), new FollowPathClip(spark, path1, 2000));
-	timeline.add(time(10000), new FollowPathClip(spark, path2, 1500));
+	timeline.add(time(7500), new FollowPathClip(spark, path1, 900));
+	timeline.add(time(8500), new FollowPathClip(spark, path2, 800));
 
-	var kf1 = 11500;
+	var kf1 = 9300;
 	timeline.add(time(kf1), new ToggleClassClip(browserLine, 'hidden', true));
 	timeline.add(time(kf1), new HighlightClip(browserLine.querySelector('.code-line-content')));
 	timeline.add(time(kf1), new StateClip('.browser__content', {
@@ -49,23 +49,23 @@ export default function(timeline) {
 		3300: 'edit4'
 	}));
 
-	timeline.add(time(13000), new TextInputClip(browserToken, 'darkblue', {
+	timeline.add(time(10800), new TextInputClip(browserToken, 'darkblue', {
 		beforeDelay: 700,
 		afterDelay: 200,
 		duration: 900
 	}));
-	timeline.add(time(15500), new FollowPathClip(spark, path2_2, {
-		duration: 1800,
+	timeline.add(time(13300), new FollowPathClip(spark, path2_2, {
+		duration: 800,
 		reverse: true
 	}));
-	timeline.add(time(18000), new FollowPathClip(spark, path1, {
-		duration: 2000,
+	timeline.add(time(14200), new FollowPathClip(spark, path1, {
+		duration: 900,
 		reverse: true
 	}));
 
-	var kf2 = 20000;
+	var kf2 = 15100;
 	timeline.add(time(kf2), new ToggleClassClip(editorLine, 'hidden', true));
 	timeline.add(time(kf2), new HighlightClip(editorLine.querySelector('.code-line-content')));
 	
-	timeline.add(time(22500), fade(elem));
+	timeline.add(time(18000), fade(elem));
 };

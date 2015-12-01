@@ -29,7 +29,10 @@ class Controls {
 		this.moveThreshold = 3;
 		this.scrobbling = false;
 
-		var renderTime = time => this.progress.style.width = (100 * time / timeline.duration) + '%';
+		var renderTime = time => {
+			this.container.setAttribute('data-time', time);
+			this.progress.style.width = (100 * time / timeline.duration) + '%';
+		};
 
 		timeline
 		.on('state', state => {

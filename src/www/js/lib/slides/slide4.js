@@ -40,42 +40,42 @@ export default function(timeline) {
 	var path1 = [[694, 403], [694, 251], [628, 145], [486, 145]];
 	var path2 = [[270, 128], [180, 128], [155, 322], [300, 360]];
 	timeline.add(time(5000), new TextRevealClip(text2, 1500));
-	timeline.add(time(5000), new FollowPathClip(spark, path1, 2000));
-	timeline.add(time(7300), new FollowPathClip(spark, path2, 1500));
+	timeline.add(time(5000), new FollowPathClip(spark, path1, 900));
+	timeline.add(time(6100), new FollowPathClip(spark, path2, 800));
 	
-	var kf1 = 8800;
+	var kf1 = 6900;
 	timeline.add(time(kf1), new ToggleClassClip(browserTokenValue1, 'hidden'));
 	timeline.add(time(kf1), new ToggleClassClip(browserTokenValue2, 'hidden', true));
 	timeline.add(time(kf1), new HighlightClip(browserToken));
 	timeline.add(time(kf1), new StateClip('.browser__content', {
 		0: '',
 		500: 'edit1',
-		7500: 'edit2'
+		6000: 'edit2'
 	}));
 
 
-	timeline.add(time(11000), new TextRevealClip(text3, 1000));
-	timeline.add(time(14000), new HighlightClip(browserToken));
+	timeline.add(time(9000), new TextRevealClip(text3, 700));
+	timeline.add(time(11000), new HighlightClip(browserToken));
 
-	timeline.add(time(14500), new TextInputClip(browserTokenValue2, 'blue', {
+	timeline.add(time(11500), new TextInputClip(browserTokenValue2, 'blue', {
 		beforeDelay: 700,
 		afterDelay: 200,
 		duration: 600
 	}));
 
-	timeline.add(time(16500), new FollowPathClip(spark, path2, {
-		duration: 1500,
+	timeline.add(time(13500), new FollowPathClip(spark, path2, {
+		duration: 800,
 		reverse: true
 	}));
-	timeline.add(time(18200), new FollowPathClip(spark, path1, {
-		duration: 2000,
+	timeline.add(time(14400), new FollowPathClip(spark, path1, {
+		duration: 900,
 		reverse: true
 	}));
 
-	var kf2 = 20300;
+	var kf2 = 15300;
 	timeline.add(time(kf2), new ToggleClassClip(editorTokenValue1, 'hidden'));
 	timeline.add(time(kf2), new ToggleClassClip(editorTokenValue2, 'hidden', true));
 	timeline.add(time(kf2), new HighlightClip(editorToken));
 
-	timeline.add(time(23500), fade(elem));
+	timeline.add(time(18000), fade(elem));
 }
