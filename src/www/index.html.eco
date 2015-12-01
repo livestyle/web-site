@@ -45,6 +45,11 @@ browserCode:
 				<li class="hero-links__item"><a href="/tour/" class="hero-link_demo">Watch the demo</a></li>
 				<li class="hero-links__item"><a href="/docs/" class="hero-link_guide">Getting started guide</a></li>
 			</ul>
+
+			<div class="secret-powers">
+				<a href="/analyzer/" class="secret-powers__link">Secret super-powers</a>
+			</div>
+
 			<p><a href="/" data-osx="https://github.com/livestyle/app/releases/download/v1.0.0/livestyle-osx.zip" data-win="http://download.emmet.io/livestyle/livestyle-win32.zip" class="download-btn">Download App</a></p>
 			<span class="hero-image"></span>
 		</section>

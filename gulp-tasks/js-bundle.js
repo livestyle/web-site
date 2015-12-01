@@ -19,6 +19,13 @@ var iifeEnd = new Buffer(';\n__babelModule();})();\n');
 var innerModuleStart = new Buffer('var __babelModule = function() {');
 var innerModuleEnd = new Buffer('};');
 
+const defaultOptions = {
+	detectGlobals: false,
+	debug: false,
+	detectGlobals: false,
+	babelify: true
+};
+
 module.exports = function(options) {
 	return through.obj(function(file, enc, next) {
 		var self = this;
@@ -40,8 +47,12 @@ function jsBundle(file, options) {
 			b.plugin(watchify);
 		}
 
-		b._babelHelpers = [];
-		_bundles[file.path] = b.transform(babelify(b._babelHelpers, options), {global: true});
+		if (options.babelify) {
+			b._babelHelpers = [];
+			b = b.transform(babelify(b._babelHelpers, options), {global: true});
+		}
+
+		_bundles[file.path] = b;
 	}
 
 	var bundle = _bundles[file.path];
@@ -51,7 +62,7 @@ function jsBundle(file, options) {
 		this.push(innerModuleStart);
 		this.push(contents);
 		this.push(innerModuleEnd);
-		if (bundle._babelHelpers.length) {
+		if (bundle._babelHelpers && bundle._babelHelpers.length) {
 			var helpersCode = babel.buildExternalHelpers(bundle._babelHelpers, 'var');
 			this.push(new Buffer(helpersCode));
 		}
@@ -61,11 +72,7 @@ function jsBundle(file, options) {
 }
 
 function makeOptions(file, options) {
-	options = extend({
-		entries: [file.path],
-		debug: false,
-		detectGlobals: false
-	}, options || {});
+	options = extend({entries: [file.path]}, defaultOptions,  options || {});
 
 	if (options.standalone === true) {
 		options.standalone = path.basename(file.path)

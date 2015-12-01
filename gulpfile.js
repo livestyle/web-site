@@ -4,6 +4,7 @@ var path = require('path');
 var buffer = require('vinyl-buffer');
 var through = require('through2');
 var extend = require('xtend');
+var combine = require('stream-combiner2');
 var gulp = require('gulp');
 var sourcemaps = require('gulp-sourcemaps');
 var postcss = require('gulp-postcss');
@@ -16,20 +17,41 @@ var server = require('./gulp-tasks/server');
 
 const isWatching = ~process.argv.indexOf('watch') || ~process.argv.indexOf('--watch');
 const production = ~process.argv.indexOf('--production');
-const dest = './out';
 const srcOpt = {cwd: './src/www', base: './src/www'};
+const destDir = './out';
+const src = (pattern, options) => gulp.src(pattern, extend(srcOpt, options || {}));
+const dest = options => gulp.dest(destDir, options);
+const nodeModules = path.resolve(__dirname, 'node_modules');
+const np = file => path.resolve(nodeModules, file);
 
-gulp.task('js', () => {
+gulp.task('js', ['worker', 'editor'], () => {
 	var stream;
-	return stream = gulp.src('js/*.js', extend(srcOpt, {read: false}))
-	.pipe(jsBundle({watch: isWatching})).once('error', err => stream.emit('error', err))
-	.pipe(buffer()).once('error', err => stream.emit('error', err))
-	.pipe(production ? uglify() : through.obj())
-	.pipe(gulp.dest(dest));
+	return stream = src(['js/*.js', '!js/{worker,editor}.js'], {read: false})
+	.pipe(js({watch: isWatching})).once('error', err => stream.emit('error', err))
+	.pipe(dest());
+});
+
+gulp.task('worker', () => {
+	return src('js/worker.js')
+	.pipe(js({babelify: false, watch: isWatching}))
+	.pipe(dest());
+});
+
+gulp.task('editor', () => {
+	return src('js/editor.js')
+	.pipe(jsBundle({
+		babelify: false,
+		noParse: [
+			np('codemirror-movie/dist/movie.js'), 
+			np('emmet-codemirror/dist/emmet.js'),
+			np('codemirror/lib/codemirror.js')
+		]
+	}))
+	.pipe(dest());
 });
 
 gulp.task('css', () => {
-	return gulp.src('css/*.css', srcOpt)
+	return src('css/*.css')
 	.pipe(sourcemaps.init())
 	.pipe(postcss([
 		require('postcss-import'),
@@ -37,12 +59,12 @@ gulp.task('css', () => {
 	]))
 	.pipe(production ? minify({processImport: false}) : through.obj())
 	.pipe(sourcemaps.write('./'))
-	.pipe(gulp.dest(dest));
+	.pipe(dest());
 });
 
-gulp.task('demo', () => gulp.src('./demo/**', {base: './'}).pipe(gulp.dest('./out')));
+gulp.task('demo', () => gulp.src('./demo/**', {base: './'}).pipe(dest()));
 
-gulp.task('server', () => server('./out'));
+gulp.task('server', () => server(destDir));
 
 gulp.task('watch', ['build', 'server'], () => {
 	gulp.watch('js/**/*.js', srcOpt, ['js'])
@@ -53,7 +75,7 @@ gulp.task('watch', ['build', 'server'], () => {
 gulp.task('site', () => site(['www/**/*.*', '!**/*.{css,js}'], '../out'));
 
 gulp.task('full', ['build'], () => {
-	return gulp.src('**/*.{html,css,js,ico}', {cwd: dest})
+	return gulp.src('**/*.{html,css,js,ico}', {cwd: destDir})
 		.pipe(gzip({
 			threshold: '1kb',
 			gzipOptions: {level: 7}
@@ -63,3 +85,13 @@ gulp.task('full', ['build'], () => {
 
 gulp.task('build', ['js', 'site', 'css', 'demo']);
 gulp.task('default', ['build']);
+
+////////////// helpers
+
+function js(options) {
+	return combine.obj(
+		jsBundle({watch: isWatching}),
+		buffer(),
+		production ? uglify() : through.obj()
+	);
+}

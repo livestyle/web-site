@@ -126,7 +126,7 @@ a:link:hover {
 
 .hero-links {
 	list-style-type: none;
-	margin: 0 0 97px;
+	margin: 0 0 35px;
 	font-size: 0.9em;
 }
 
@@ -161,6 +161,47 @@ a:link:hover {
 	position: absolute;
 	margin-left: 7px;
 	margin-top: 3px;
+}
+
+.secret-powers {
+	margin-bottom: 35px;
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+}
+
+.secret-powers::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 23px;
+	background-image: linear-gradient(rgba(246, 246, 246, 0.0), #eeeeee);
+	transition: transform 0.2s;
+}
+
+.secret-powers:hover::after {
+	transform: translateY(100%);
+}
+
+.secret-powers__link {
+	color: #e74c3c;
+	display: inline-block;
+	border: 2px solid currentColor;
+	border-radius: 40px;
+	text-decoration: none;
+	padding: 6px 35px;
+	font-size: 1.2em;
+	transform: translateY(17px);
+	opacity: 0.2;
+	transition-property: opacity, transform;
+	transition-duration: 0.2s;
+}
+
+.secret-powers:hover .secret-powers__link {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .download-btn {

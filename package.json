@@ -9,7 +9,11 @@
   "author": "Sergey Chikuyonok <serge.che@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "es6-collections": "^0.5.5"
+    "codemirror": "^5.9.0",
+    "emmet-codemirror": "^1.2.5",
+    "es6-collections": "^0.5.5",
+    "livestyle-analyzer": "livestyle/analyzer",
+    "livestyle-patcher": "livestyle/patcher"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",

@@ -1,0 +1,151 @@
+---
+layout: base
+css:
+  - '/css/analyzer.css'
+js:
+  - '/js/editor.js'
+  - '/js/analyzer-demo.js'
+---
+<header class="toolbar">
+	<h1><a href="/"><img src="/i/analyzer/logo.png" class="logo" alt="Emmet Livestyle" />LiveStyle</a></h1>
+	Syntax:
+	<select name="syntax">
+		<option value="text/x-scss">SCSS</option>
+		<option value="text/x-less">LESS</option>
+	</select>
+</header>
+<section class="editor">
+<script type="text/x-scss">
+$pad: 10px;
+$c1: #c30;
+$c2: darken(#c30, 0.01);
+$c3: #cc3201;
+$a1: 1px;
+$a2: 10px - 9;
+
+@mixin mx {
+	color: $c1;
+	.inner {
+		padding: 5px;
+	}
+}
+
+@function plus($var1, $var2) {
+	@return $var1 + $var2;
+}
+
+.baz {
+	padding: 10px;
+
+	@media (min-width: 400px) {
+		padding: 5px;
+	}
+}
+
+ul.nav {
+	list-style: none;
+	padding: plus(1, 5);
+	margin: 0;
+	li {
+		padding: $pad;
+		margin: 1px;
+		font-weight: bold;
+		background: lighten(#f00, 15%);
+		border-color: #cc3201;
+		@include mx;
+	}
+
+	@for $i from 1 through 3 {
+		.item-#{$i} {
+			width: 4.5em * $i;
+		}
+	}
+}
+</script>
+<script type="text/x-less">
+@a: 1px;
+@a2: 10px - 9;
+@b: bar;
+@c1: #fc0;
+@c1_1: #fb0;
+@c2: #aaa;
+@c3: darken(#fc0, 0.1);
+
+
+.mx {
+	c: d;
+}
+
+.mx(@a: 2) {
+	g: @a;
+	.inner {
+		h: @a + 1;
+	}
+}
+
+.baz {
+	padding: 10px;
+
+	@media (min-width: 400px) {
+		padding: 5px;
+	}
+}
+
+.mx2() {
+	e: f;
+}
+
+.foo {
+	@baz: 100%;
+	padding: @a + 1;
+
+	.bar1 {
+		a: b;
+	}
+
+	.bar2& {
+		@a: 4px;
+		padding: @a + 1;
+	}
+
+	&.bar3, &.bar4 {
+		a: b;
+	}
+
+	@{b} {
+		a: b;
+	}
+
+	.mx;
+	.mx2;
+}
+
+.color {
+	v1: #fff;
+	v2: #fc1;
+	v3: #cca000;
+}
+
+.props {
+	padding: 1px;
+}
+</script>
+
+<textarea name="editor" id="editor"></textarea>
+</section>
+
+<aside class="sidebar">
+	<h2>LiveStyle Analyzer</h2>	
+	<p>A working prototype of LiveStyle’s static analysis and experimental UI to improve your preprocessor stylesheet editing experience.</p>
+
+	<p class="suggestions">Suggestions? <a href="mailto:info@emmet.io">info@emmet.io</a></p>
+
+	<ul class="features">
+		<li><img src="/i/analyzer/feature-sel.png" height="100" width="100" />Quickly spot required CSS selectors right in your editor: no matter how deep and complex your nested section, LiveStyle displays its resolved CSS counterpart.</li>
+		<li><img src="/i/analyzer/feature-outline.png" height="100" width="100" />Press <kbd>Ctrl-O</kbd> to open <span class="pseudo-href" data-action="show-outline">quick outline</span>: a compact representation of your stylesheet structure and its resolved CSS. Quickly filter required selectors and pick them with arrow keys.</li>
+		<li><img src="/i/analyzer/feature-suggest.png" height="100" width="100" />Click on <i>+</i> icon to display variables that resolves to the same value. For colors, variables with <em>visually similar</em> colors are suggested (marked with <code>≈</code> icon).</li>
+		<li><img src="/i/analyzer/feature-computed.png" height="100" width="100" />Move caret on CSS expression to see its computed value.</li>
+		<li><img src="/i/analyzer/feature-mixin.png" height="100" width="100" />Mixin output: move caret on <em>mixin invocation</em> to see all matched mixins and their output.</li>
+		<li><img src="/i/analyzer/feature-complete.png" height="100" width="100" />Press <kbd>Ctrl+Space</kbd> for variables and mixin completions.</li>
+	</ul>
+</aside>
