@@ -186,7 +186,7 @@ a:link:hover {
 }
 
 .secret-powers__link {
-	color: #e74c3c;
+	color: #e74c3c !important;
 	display: inline-block;
 	border: 2px solid currentColor;
 	border-radius: 40px;
