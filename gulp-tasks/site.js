@@ -14,6 +14,7 @@ var htmlTransform = require('html-transform');
 var combine = require('stream-combiner2');
 var highlight = require('highlight.js');
 var imageSize = require('image-size');
+var transformUrl = require('./rewrite-url');
 
 var htmlparser = htmlTransform.htmlparser;
 marked.setOptions({
@@ -44,44 +45,11 @@ module.exports = function(src, dest, options) {
 					this.meta.js || []
 				).filter(Boolean);
 			},
-			renderCSS: require('./assets/render-css'),
-			quickTour() {
-				var qtPath = path.resolve(__dirname, '../node_modules/quick-tour/index.html');
-				var contents = fs.readFileSync(qtPath, 'utf8');
-				var dom = htmlparser.parseDOM(contents);
-				var utils = htmlparser.DomUtils;
-				var node = utils.findOne(elem => elem.attribs['class'] === 'qt', dom);
-				if (!node) {
-					throw new Error('No quick tour code found');
-				}
-
-				return utils.getOuterHTML(node);
-			}
+			renderCSS: require('./assets/render-css')
 		}
 	}, options || {});
 
-	var transform = {
-		transformUrl: function(url, file, ctx) {
-			if (ctx.type === 'html' && ctx.stats) {
-				var node = ctx.node;
-				if (node.name === 'img' && !ctx.node.width) {
-					// add sizes for images for better UX
-					let filePath = path.join(file.base, ctx.clean);
-					try {
-						let size = imageSize(filePath);
-						node.attribs.width = size.width + '';
-						node.attribs.height = size.height + '';
-					} catch (e) {
-						console.warn('Unable to get image size for', filePath);
-						console.warn(e);
-					}
-				}
-				url = '/-/' + ctx.stats.hash + url;
-			}
-
-			return url;
-		}
-	};
+	var transform = {transformUrl};
 
 	return combine.obj(
 		ssg.src(src, options),

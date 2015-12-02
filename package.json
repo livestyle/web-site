@@ -21,6 +21,7 @@
     "babel-runtime": "^5.8.25",
     "browserify": "^12.0.0",
     "connect": "^3.4.0",
+    "css-transform": "sergeche/css-transform#v1.0.1",
     "eco": "^1.1.0-rc-3",
     "gulp": "^3.9.0",
     "gulp-gzip": "^1.2.0",

@@ -14,6 +14,7 @@ var gzip = require('gulp-gzip');
 var jsBundle = require('./gulp-tasks/js-bundle');
 var site = require('./gulp-tasks/site');
 var server = require('./gulp-tasks/server');
+var cssRewrite = require('./gulp-tasks/rewrite-css-url');
 
 const isWatching = ~process.argv.indexOf('watch') || ~process.argv.indexOf('--watch');
 const production = ~process.argv.indexOf('--production');
@@ -57,6 +58,7 @@ gulp.task('css', () => {
 		require('postcss-import'),
 		require('autoprefixer')({browsers: ['last 3 versions']})
 	]))
+	.pipe(cssRewrite())
 	.pipe(production ? minify({processImport: false}) : through.obj())
 	.pipe(sourcemaps.write('./'))
 	.pipe(dest());
@@ -75,7 +77,7 @@ gulp.task('watch', ['build', 'server'], () => {
 gulp.task('site', () => site(['www/**/*.*', '!**/*.{css,js}'], '../out'));
 
 gulp.task('full', ['build'], () => {
-	return gulp.src('**/*.{html,css,js,ico}', {cwd: destDir})
+	return gulp.src('**/*.{html,css,js,ico,svg}', {cwd: destDir})
 		.pipe(gzip({
 			threshold: '1kb',
 			gzipOptions: {level: 7}
