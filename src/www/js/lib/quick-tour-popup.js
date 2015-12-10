@@ -50,6 +50,5 @@ function show(popup, url) {
 	target.appendChild(iframe);
 	popup.classList.add('quick-tour-popup_visible');
 
-	console.log(getContentElements());
 	getContentElements().forEach(elem => elem.classList.add('layout-container_blurred'));
 }
