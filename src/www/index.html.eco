@@ -50,7 +50,7 @@ browserCode:
 				<a href="/analyzer/" class="secret-powers__link">Secret super-powers</a>
 			</div>
 
-			<p><a href="/" data-osx="https://github.com/livestyle/app/releases/download/v1.0.0/livestyle-osx.zip" data-win="http://download.emmet.io/livestyle/livestyle-win32.zip" class="download-btn">Download App</a></p>
+			<p><a href="https://github.com/livestyle/app/releases"  class="download-btn">Download App</a></p>
 			<span class="hero-image"></span>
 		</section>
 	</div>
@@ -133,7 +133,7 @@ browserCode:
 	<hr />
 
 	<div class="layout-content layout-content_download">
-		<a href="/download" class="download-btn">Download App</a>
+		<a href="https://github.com/livestyle/app/releases" class="download-btn">Download App</a>
 	</div>
 
 	<hr />

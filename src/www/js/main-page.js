@@ -7,12 +7,14 @@ import slide2 from './lib/main-page-slides/one-heart';
 import slide3 from './lib/main-page-slides/remote-view';
 import ViewportPlaybackTrigger from './lib/viewport-playback-trigger';
 import qtPopup from './lib/quick-tour-popup';
+import {toArray} from './lib/utils';
 
 setupSlide('.layout-content_bidirectional .layout-assets', slide1);
 setupSlide('.layout-content_one-heart .layout-assets', slide2);
 setupSlide('.layout-content_remote-view', slide3);
 
 var popup = qtPopup('.quick-tour-popup');
+var isOSX = navigator.platform.indexOf('Mac') !== -1;
 
 document.querySelector('.hero-link_demo').addEventListener('click', function(evt) {
 	evt.preventDefault();
@@ -27,12 +29,17 @@ document.addEventListener('keyup', evt => {
 });
 
 // setup download button
-var downloadBtn = document.querySelector('.download-btn');
-if (navigator.platform.indexOf('Mac') !== -1) {
-	downloadBtn.href = downloadBtn.getAttribute('data-osx');
-} else if (navigator.platform.indexOf('Win') !== -1) {
-	downloadBtn.href = downloadBtn.getAttribute('data-win');
-}
+getLatestRelease(release => {
+	var assets = release.assets.reduce((result, asset) => {
+		result[asset.name] = asset;
+		return result;
+	}, {});
+	var fileName = isOSX ? 'livestyle-osx.zip' : 'LiveStyleSetup.exe';
+	if (assets[fileName]) {
+		toArray(document.querySelectorAll('.download-btn'))
+		.forEach(elem => elem.href = assets[fileName].browser_download_url);
+	}
+});
 
 ///////////////////////////
 
@@ -79,4 +86,25 @@ function getViewport() {
 		left: window.pageXOffset,
 		right: window.pageXOffset + window.innerWidth
 	};
+}
+
+function getLatestRelease(callback) {
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', 'https://api.github.com/repos/livestyle/app/releases/latest');
+	xhr.onreadystatechange = function() {
+		if (this.readyState !== 4 || this.status === 0) {
+			return;
+		}
+
+		if (this.status === 200) {
+			try {
+				return callback(JSON.parse(this.responseText));
+			} catch(err) {
+				console.error(err);
+			}
+		}
+
+		console.error(this.responseText);
+	};
+	xhr.send();
 }
