@@ -45,6 +45,28 @@ module.exports = function(src, dest, options) {
 					this.meta.js || []
 				).filter(Boolean);
 			},
+			nextPage() {
+				var curItem = this.navigation.current();
+				if (curItem) {
+					var siblings = curItem.parent.children;
+					return siblings[siblings.indexOf(curItem) + 1];
+				}
+			},
+			prevPage() {
+				var curItem = this.navigation.current();
+				if (curItem) {
+					var siblings = curItem.parent.children;
+					return siblings[siblings.indexOf(curItem) - 1];
+				}
+			},
+			docsNextPage() {
+				var docsRoot = this.navigation.find('/docs/');
+				return docsRoot.selected === 'current' ? docsRoot.children[0] : this.nextPage();
+			},
+			docsPrevPage() {
+				var docsRoot = this.navigation.find('/docs/');
+				return docsRoot.selected === 'current' ? null : (this.prevPage() || docsRoot);
+			},
 			renderCSS: require('./assets/render-css')
 		}
 	}, options || {});

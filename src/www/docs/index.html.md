@@ -4,11 +4,11 @@ title: Getting started
 ---
 # Getting started
 
-LiveStyle is a tool for live CSS editing, similar to popular [LiveReload](http://livereload.com), [CodeKit](https://incident57.com/codekit/) etc. The idea is simple: you edit CSS file in your editor, save it and see how web-page in your browser that contains this stylesheet is automatically refreshed, giving you a visual feedback of changes you just made.
+LiveStyle is a tool for live CSS editing, similar to popular [LiveReload](http://livereload.com), [CodeKit](https://incident57.com/codekit/) etc. The idea behind those tools is simple: you edit CSS file in your editor, save it and see how web-page in your browser that contains this stylesheet is automatically refreshed, giving you a visual feedback of changes you just made.
 
 Almost all such live edit tools works in pretty much the same way: they are watching for file updates in given folder, do some additional processing (for example, convert LESS to CSS) and finally update a web-page. Which means you have to *save* your source file and *wait* for a few seconds just to see how a single change affects page.
 
-LiveStyle introduces a *truly live* editing experience: it updates web-page immediately, as-you-type in text editor. Without file saving or page reloading. And this is the first tool able to bring updates from browser DevTools back into source code *the right way*.
+LiveStyle introduces a *real-time* editing experience: it updates web-page immediately, as-you-type in text editor. Without file saving or page reloading. And this is the first tool able to bring updates from browser DevTools back into source code *the right way*.
 
 ## Installation
 
@@ -18,8 +18,7 @@ The easiest way to do so is to use [LiveStyle app](/#download):
 
 1. [Download LiveStyle app](/#download) for your OS (no Linux support yet, please use [manual installation](#manual-installation)).
 2. Unpack and run it.
-	* *OSX users*: For the first time you have to right-click on `LiveStyle.app` and pick “Open” menu item to bypass system warning.
-	* *Windows users*: When running LiveStyle for the first time, Windows may ask for network access permissions. Please allow network access, it is required to download plugins and for [Remote View](/docs/remote-view/).
+> *Windows users*: When running LiveStyle for the first time, Windows may ask for network access permissions. Please allow network access, it is required to download plugins and for [Remote View](/docs/remote-view/).
 
 If everything is fine, you’ll see app window like this:
 
@@ -40,7 +39,7 @@ If you experience issues with downloading and running LiveStyle app, you can try
 
 ![image](img/chrome.png)
 
-When installed, you’ll see an **LS** icon in Chrome toolbar:
+When installed, you’ll see a LiveStyle icon in Chrome toolbar:
 
 ![image](img/chrome-ls.png)
 

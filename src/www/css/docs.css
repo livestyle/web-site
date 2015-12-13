@@ -1,11 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);
 @import url(./assets/colors.css);
 
 body {
 	padding: 0;
 	margin: 0;
-	font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 16px;
+    font-weight: 200;
     line-height: 1.72222;
     color: #34495e;
     background-color: #fff;
@@ -24,6 +24,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 50px;
     margin-bottom: 10px;
     line-height: 1.2;
+    font-weight: normal;
 }
 
 h6 {
@@ -32,23 +33,23 @@ h6 {
 
 h1 {
 	margin-top: 0;
-    font-size: 61px;
-}
-
-h2 {
     font-size: 53px;
 }
 
-h3 {
+h2 {
     font-size: 40px;
 }
 
-h4 {
+h3 {
     font-size: 29px;
 }
 
-h5 {
+h4 {
     font-size: 28px;
+}
+
+h5 {
+    font-size: 24px;
 }
 
 h6 {
@@ -109,30 +110,20 @@ hr {
 	margin: 30px 0;
 }
 
-.project-title {
-	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-	font-weight: bold;
-	font-size: 40px;
+.project-logo {
 	line-height: 1;
 	margin-bottom: 20px;
-	color: #bdc3c7;
 }
 
-.project-title a {
-	color: inherit;
-	text-decoration: none;
-}
-
-.project-title a:hover {
-	/* text-decoration: underline; */
-	color: #3395dd;
-}
-
-.project-title__prefix {
-	font-size: 11px;
+.project-logo::before {
+	font-family: 'Playfair Display', serif;
+	content: 'Emmet';
 	display: block;
-	margin-left: 2px;
-	line-height: 0.5;
+	font-style: italic;
+	letter-spacing: 3px;
+	font-size: 13px;
+	color: #7A7A7A;
+	margin-bottom: 5px;
 }
 
 .layout {
@@ -146,7 +137,7 @@ hr {
 	width: 220px;
 	margin-right: -220px;
 	font-size: 14px;
-	padding-top: 40px;
+	padding-top: 53px;
 }
 
 .main-nav__title {
@@ -174,6 +165,19 @@ hr {
 
 .content {
 	margin-left: 250px;
+}
+
+.docs-nav {
+	overflow: hidden;
+	margin: 30px 0;
+}
+
+.docs-nav__item_next {
+	float: right;
+}
+
+.docs-nav__item_prev {
+	float: left;
 }
 
 .page-footer {

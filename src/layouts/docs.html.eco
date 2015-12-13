@@ -1,6 +1,7 @@
 ---
 layout: base
 css:
+  - 'https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic'
   - '/css/docs.css'
 ---
 <% renderNav = (nav) => %>
@@ -17,10 +18,20 @@ css:
 </ul>
 <% end %>
 
-<div class="project-title"><a href="/"><span class="project-title__prefix">Emmet</span> LiveStyle</a></div>
+<div class="project-logo">
+	<a href="/"><img src="/i/logo-white.svg" width="201" height="45" alt="LiveStyle" /></a>
+</div>
 <nav class="main-nav">
 	<%- renderNav(@navigation) %>
 </nav>
 <section class="content">
 <%- @content %>
+	<nav class="docs-nav">
+	<% if @docsNextPage(): %>
+		<p class="docs-nav__item docs-nav__item_next"><a href="<%= @docsNextPage().url %>"><%- @docsNextPage().title %></a> →</p>
+	<% end %>
+	<% if @docsPrevPage(): %>
+		<p class="docs-nav__item docs-nav__item_prev">← <a href="<%= @docsPrevPage().url %>"><%- @docsPrevPage().title %></a></p>
+	<% end %>
+	</nav>
 </section>

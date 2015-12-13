@@ -71,7 +71,7 @@ gulp.task('server', () => server(destDir));
 gulp.task('watch', ['build', 'server'], () => {
 	gulp.watch('js/**/*.js', srcOpt, ['js'])
 	gulp.watch('css/**/*.css', srcOpt, ['css']);
-	gulp.watch('**/*.{html,eco}', srcOpt, ['site']);
+	gulp.watch('**/*.{html,eco,md}', srcOpt, ['site']);
 });
 
 gulp.task('site', () => site(['www/**/*.*', '!**/*.{css,js}'], '../out'));
