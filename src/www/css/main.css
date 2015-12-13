@@ -204,7 +204,18 @@ a:link:hover {
 	transform: translateY(0);
 }
 
-.download-btn {
+.download__fallback {
+	font-family: 'Playfair Display', serif;
+	font-size: 13px;
+	font-style: italic;
+	color: #7A7A7A;
+	width: 260px;
+	line-height: 1.5;
+	margin: 10px auto 0;
+	display: none;
+}
+
+.download__btn {
 	display: inline-block;
 	background: #fff;
 	border: 2px solid #446AF8;
@@ -214,8 +225,49 @@ a:link:hover {
 	font-size: 1em;
 }
 
-.hero .download-btn {
+.download_unavailable .download__btn {
+	opacity: .2;
+	pointer-events: none;
+}
+
+.download_unavailable .download__fallback {
+	display: block;
+}
+
+.hero .download__btn {
 	background: #f4f4f4;
+}
+
+.download-os {
+	position: relative;
+	top: 5px;
+	height: 30px;
+	margin-bottom: -30px;
+}
+
+.download-os__link {
+	text-decoration: none;
+}
+
+.download-os__icon {
+	width: 15px;
+	height: auto;
+	vertical-align: bottom;
+	fill: #a3a3a3;
+	margin: 0 3px;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.download-os__icon[data-os="osx"] {
+	width: 22px;
+	position: relative;
+	top: 1px;
+}
+
+.download-os__icon:hover,
+.download-os__icon_active {
+	fill: #2ab79a;
 }
 
 .layout-content_bidirectional .layout-assets {

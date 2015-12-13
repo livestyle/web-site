@@ -14,9 +14,14 @@ setupSlide('.layout-content_one-heart .layout-assets', slide2);
 setupSlide('.layout-content_remote-view', slide3);
 
 var popup = qtPopup('.quick-tour-popup');
-var isOSX = navigator.platform.indexOf('Mac') !== -1;
+var OS = 'unknown';
+if (/Mac/.test(navigator.platform)) {
+	OS = 'osx';
+} else if (/Win/.test(navigator.platform)) {
+	OS = 'windows';
+}
 
-document.querySelector('.hero-link_demo').addEventListener('click', function(evt) {
+$('.hero-link_demo').addEventListener('click', function(evt) {
 	evt.preventDefault();
 	evt.stopPropagation();
 	popup.show(this.href);
@@ -30,18 +35,44 @@ document.addEventListener('keyup', evt => {
 
 // setup download button
 getLatestRelease(release => {
+	var osAsset = {
+		windows: 'LiveStyleSetup.exe',
+		osx: 'livestyle-osx.zip'
+	};
+
 	var assets = release.assets.reduce((result, asset) => {
 		result[asset.name] = asset;
 		return result;
 	}, {});
-	var fileName = isOSX ? 'livestyle-osx.zip' : 'LiveStyleSetup.exe';
-	if (assets[fileName]) {
-		toArray(document.querySelectorAll('.download-btn'))
-		.forEach(elem => elem.href = assets[fileName].browser_download_url);
+
+	$$('.download-os__link').forEach(elem => {
+		var elemOS = elem.getAttribute('data-os');
+		var asset = assets[osAsset[elemOS]];
+		if (asset) {
+			elem.href = asset.browser_download_url;
+			if (elemOS === OS) {
+				$('.download-os__icon', elem).classList.add('download-os__icon_active');
+			}
+		}
+	});
+
+	var platformAsset = osAsset[OS];
+	if (assets[platformAsset]) {
+		$$('.download__btn').forEach(elem => elem.href = assets[platformAsset].browser_download_url);
+	} else {
+		$$('.download').forEach(elem => elem.classList.add('download_unavailable'));
 	}
 });
 
 ///////////////////////////
+
+function $(sel, ctx=document) {
+	return ctx.querySelector(sel);
+}
+
+function $$(sel, ctx=document) {
+	return toArray(ctx.querySelectorAll(sel));
+}
 
 function setupSlide(sel, factory, a) {
 	var tm = new Timeline(sel);
@@ -97,11 +128,13 @@ function getLatestRelease(callback) {
 		}
 
 		if (this.status === 200) {
+			var data = {};
 			try {
-				return callback(JSON.parse(this.responseText));
+				data = JSON.parse(this.responseText);
 			} catch(err) {
 				console.error(err);
 			}
+			return callback(data);
 		}
 
 		console.error(this.responseText);

@@ -49,8 +49,7 @@ browserCode:
 			<div class="secret-powers">
 				<a href="/analyzer/" class="secret-powers__link">Secret super-powers</a>
 			</div>
-
-			<p><a href="https://github.com/livestyle/app/releases"  class="download-btn">Download App</a></p>
+			<%- @partial('download') %>
 			<span class="hero-image"></span>
 		</section>
 	</div>
@@ -133,7 +132,7 @@ browserCode:
 	<hr />
 
 	<div class="layout-content layout-content_download">
-		<a href="https://github.com/livestyle/app/releases" class="download-btn">Download App</a>
+		<%- @partial('download') %>
 	</div>
 
 	<hr />
