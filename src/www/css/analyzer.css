@@ -15,6 +15,7 @@ html, body {
 h2 {
 	font-size: 29px;
 	margin: 0 0 15px;
+	font-weight: normal;
 }
 
 kbd {
@@ -156,4 +157,5 @@ a:hover, .pseudo-href:hover {
 	height: 1.35em;
 	text-align: center;
 	border-radius: 50%;
+	font-family: 'DejaVu Sans Mono', Consolas, Menlo, monospace;
 }
