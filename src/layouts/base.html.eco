@@ -16,5 +16,15 @@
 	<% for src in @js(): %>
 		<script src="<%= src %>"></script>
 	<% end %>
+	<footer class="page-footer">
+		<ul class="footer-links">
+			<li class="footer-links__item"><a href="https://twitter.com/emmetio">Twitter</a></li>
+			<li class="footer-links__item"><a href="https://github.com/livestyle">GitHub</a></li>
+			<li class="footer-links__item"><a href="https://github.com/livestyle/issues/issues">Submit an issue</a></li>
+			<li class="footer-links__item"><a href="mailto:info@emmet.io">Mail support</a></li>
+			<li class="footer-links__item"><a href="/docs/">Guide</a></li>
+		</ul>
+		<p class="copyright">Design by <a href="http://emuravjev.ru">Evgeny Muravjev</a></p>
+	</footer>
 </body>
 </html>

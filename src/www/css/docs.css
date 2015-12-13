@@ -172,6 +172,10 @@ hr {
 	margin: 30px 0;
 }
 
+.docs-nav__item {
+	margin: 0;
+}
+
 .docs-nav__item_next {
 	float: right;
 }
@@ -181,12 +185,34 @@ hr {
 }
 
 .page-footer {
-	margin-top: 70px;
+	margin-top: 30px;
 	font-size: 0.8em;
 	padding-left: 250px;
 	color: #bdc3c7;
+	margin-bottom: 30px;
 }
 
 .page-footer p {
 	margin-bottom: 0;
+}
+
+.footer-links {
+	display: block;
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 20px;
+	text-align: center;
+}
+
+.footer-links__item {
+	display: inline-block;
+	margin: 0 15px;
+}
+
+.footer-links__item a {
+	text-decoration: none;
+}
+
+.copyright {
+	display: none;
 }
