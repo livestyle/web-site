@@ -251,7 +251,7 @@ a:link:hover {
 
 .download-os__icon {
 	width: 15px;
-	height: auto;
+	height: 15px;
 	vertical-align: bottom;
 	fill: #a3a3a3;
 	margin: 0 3px;
@@ -261,6 +261,7 @@ a:link:hover {
 
 .download-os__icon[data-os="osx"] {
 	width: 22px;
+	height: 22px;
 	position: relative;
 	top: 1px;
 }
