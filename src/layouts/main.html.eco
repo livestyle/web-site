@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: page
 css:
   - 'https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic'
   - '/css/main.css'
