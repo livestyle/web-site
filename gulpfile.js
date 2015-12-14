@@ -64,8 +64,6 @@ gulp.task('css', () => {
 	.pipe(dest());
 });
 
-gulp.task('demo', () => gulp.src('./demo/**', {base: './'}).pipe(dest()));
-
 gulp.task('server', () => server(destDir));
 
 gulp.task('watch', ['build', 'server'], () => {
@@ -85,7 +83,7 @@ gulp.task('full', ['build'], () => {
 		.pipe(dest());
 });
 
-gulp.task('build', ['js', 'site', 'css', 'demo']);
+gulp.task('build', ['js', 'site', 'css']);
 gulp.task('default', ['build']);
 
 ////////////// helpers

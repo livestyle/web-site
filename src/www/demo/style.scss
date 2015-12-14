@@ -1,0 +1,38 @@
+$spacing: 25px;
+$main-color: #000;
+
+@mixin autosize {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+}
+
+.sample-content {
+	max-width: 600px;
+	margin: 0 auto;
+	font-family: 'Playfair Display', georgia, serif;
+	line-height: 1.5;
+	position: relative;
+	color: $main-color;
+	transition: color 0.3s;
+
+	&__title {
+		font-size: 1.9em;
+		font-weight: normal;
+		line-height: 1.3;
+		margin: 12px 0 $spacing;
+		color: $main-color;
+	}
+
+	&__image {
+		@include autosize;
+		margin-bottom: $spacing;
+	}
+
+	&__logo {
+		width: 100px;
+		height: 22px;
+		display: inline-block;
+		margin-top: $spacing;
+	}
+}

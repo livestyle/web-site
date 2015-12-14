@@ -1,0 +1,7 @@
+---
+layout: base
+css: 
+  - 'https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic'
+  - '/css/style.min.css'
+---
+<%- @partial('sample-content') %>

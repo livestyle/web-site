@@ -1,0 +1,15 @@
+@import url(./assets/sample-content.css);
+
+body {
+	padding: 20px;
+}
+
+.sample-content {
+	width: auto;
+	max-width: 600px;
+}
+
+.sample-content__image {
+	width: auto;
+	max-width: 100%;
+}
