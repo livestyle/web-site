@@ -72,7 +72,7 @@ gulp.task('watch', ['build', 'server'], () => {
 	gulp.watch('**/*.{html,eco,md}', srcOpt, ['site']);
 });
 
-gulp.task('site', () => site(['www/**/*.*', '!**/*.{css,js}'], '../out'));
+gulp.task('site', () => site(['www/**/*.*', '!www/{css,js}/**'], '../out'));
 
 gulp.task('full', ['build'], () => {
 	return gulp.src('**/*.{html,css,js,ico,svg}', {cwd: destDir})

@@ -20,10 +20,10 @@ For this tutorial we’ll use a [demo page](/demo/) and [sample stylesheet](/dem
 **You need a running [LiveStyle app](/#download) to use Remote View feature.**
 
 1. In Google Chrome, visit a web-site you want to share. For this tutorial, we’ll use http://livestyle.io/demo/, but you can use your local web-site like `http://localhost:8080`.
-2. Click on **LS** icon to open LiveStyle popup and toggle Remote View:
+2. Click on *LiveStyle* icon to open LiveStyle popup and toggle Remote View:
 ![image](../img/rv1.png)
 > When enabled for a first time, you will be asked for authorization permission. You need a Google account to authenticate.
-3. In a few seconds, you’ll see a public domain like `some-name.livestyle.io`that points to domain of the page where you enabled Remote View. If you enabled it for demo page, it will point to `http://livestyle.io`, if enabled for `http://localhost:8080/about/`, it will point to `http://localhost:8080` and so on. Use this domain to preview you local web-site on external devices or other browsers. But for now simply click on this public domain to open the same page via Remote View in another tab.
+3. In a few seconds, you’ll see a public domain like `some-name.livestyle.io`that points to domain of the page where you enabled Remote View. In case of demo page with `http://livestyle.io/demo/` URL, it will point to `http://livestyle.io` domain. If you enable it, for example, on page with `http://localhost:8080/about/` URL, it will point to `http://localhost:8080` domain and so on. Use this domain to preview you local web-site on external devices or other browsers. But for now simply click on this public domain to open the same page via Remote View in another tab.
 4. Now, in Sublime Text edit a CSS file associated with browser file of original page (e.g. `layout.css`) and you should see that both original and Remote View pages are updated immediately.
 5. In tab with original page, open DevTools and update some style—the Remote View page will be updated too!
 6. When you’re done, simply turn off Remote View in LiveStyle popup to terminate session: `some-name.livestyle.io` will no longer point to your local web-site. The session will be automatically terminated if no one used Remote View domain for a 30 minutes.

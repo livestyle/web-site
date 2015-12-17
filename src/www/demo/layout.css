@@ -1,0 +1,12 @@
+body {
+	font-family: arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.sample-content__title {
+	font-size: 1.9em;
+	font-weight: normal;
+	color: #000;
+	margin-top: 12px;
+}
