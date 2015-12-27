@@ -4,7 +4,8 @@ opengraph:
   title: Emmet LiveStyle
   description: The first bi-directional real-time edit tool for CSS, LESS and SCSS
   url: 'http://livestyle.io'
-  image: '/i/og-image.png'
+  image: 'http://livestyle.io/i/og-image.png'
+  video: 'http://www.youtube.com/watch?v=Yxas3rv_WK0'
 
 editorCode1:
   body:
