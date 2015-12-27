@@ -8,6 +8,7 @@ import slide3 from './lib/main-page-slides/remote-view';
 import ViewportPlaybackTrigger from './lib/viewport-playback-trigger';
 import qtPopup from './lib/quick-tour-popup';
 import {toArray} from './lib/utils';
+import likely from './lib/vendor/likely';
 
 setupSlide('.layout-content_bidirectional .layout-assets', slide1);
 setupSlide('.layout-content_one-heart .layout-assets', slide2);

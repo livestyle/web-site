@@ -6,6 +6,7 @@
 @import url(./assets/sample-content.css);
 @import url(./assets/code.css);
 @import url(./assets/quick-tour-popup.css);
+@import url(./assets/vendor/likely.css);
 
 body {
 	padding: 0;
@@ -431,6 +432,30 @@ a:link:hover {
 
 .layout-content_download {
 	padding: 100px 0;
+}
+
+.likely {
+	text-align: center;
+	display: block;
+	margin: 50px 0 0;
+}
+
+.likely .likely__widget {
+	border: 1px solid #e7e7e9;
+	background-color: transparent;
+	padding: 2px;
+}
+
+.likely .likely__widget_twitter:hover {
+	background-color: rgba(191,237,250,.8);
+}
+
+.likely .likely__widget_facebook:hover {
+	background-color: rgba(207,212,229,.8);
+}
+
+.likely .likely__widget_gplus:hover {
+	background-color: rgba(246,207,207,.8);
 }
 
 .page-footer {

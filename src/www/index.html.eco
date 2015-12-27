@@ -1,5 +1,10 @@
 ---
 layout: main
+opengraph:
+  title: Emmet LiveStyle
+  description: The first bi-directional real-time edit tool for CSS, LESS and SCSS
+  url: 'http://livestyle.io'
+  image: '/i/og-image.png'
 
 editorCode1:
   body:
@@ -137,4 +142,10 @@ browserCode:
 
 	<hr />
 </section>
+
+<div class="likely" data-url="http://livestyle.io" >
+	<div class="twitter" data-via="emmetio">Tweet</div>
+	<div class="facebook">Share</div>
+	<div class="gplus">Plus</div>
+</div>
 <%- @partial('quick-tour-popup') %>

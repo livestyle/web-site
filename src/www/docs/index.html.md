@@ -6,6 +6,10 @@ title: Getting started
 
 LiveStyle is a tool for live CSS editing, similar to popular [LiveReload](http://livereload.com), [CodeKit](https://incident57.com/codekit/) etc. The idea behind those tools is simple: you edit CSS file in your editor, save it and see how web-page in your browser that contains this stylesheet is automatically refreshed, giving you a visual feedback of changes you just made.
 
+<div style="position: relative;width: 100%;padding-bottom: 63%;margin: 20px 0;">
+    <iframe src="https://www.youtube.com/embed/Yxas3rv_WK0?rel=0" frameborder="0" allowfullscreen style="width:100%;height:100%;position:absolute"></iframe>
+</div>
+
 Almost all such live edit tools works in pretty much the same way: they are watching for file updates in given folder, do some additional processing (for example, convert LESS to CSS) and finally update a web-page. Which means you have to *save* your source file and *wait* for a few seconds just to see how a single change affects page.
 
 LiveStyle introduces a *real-time* editing experience: it updates web-page immediately, as-you-type in text editor. Without file saving or page reloading. And this is the first tool able to bring updates from browser DevTools back into source code *the right way*.
@@ -34,7 +38,7 @@ If you experience issues with downloading and running LiveStyle app, you can try
 
 ### Google Chrome plugin
 
-1. In Chrome, go to [LiveStyle WebStore page](https://chrome.google.com/webstore/detail/livestyle-alpha/obipchajaiohjoohongibhgbfgchblei).
+1. In Chrome, go to [LiveStyle WebStore page](https://chrome.google.com/webstore/detail/emmet-livestyle/diebikgmpmeppiilkaijjbdgciafajmg).
 2. Click on **Add to Chrome** button in the upper right corner:
 
 ![image](img/chrome.png)

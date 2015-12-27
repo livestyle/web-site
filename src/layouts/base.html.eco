@@ -8,6 +8,9 @@
 	<% for href in @css(): %>
 		<link rel="stylesheet" href="<%= href %>" />
 	<% end %>
+	<% for key in Object.keys(@document.opengraph or []): %>
+		<meta property="og:<%= key %>" content="<%= @document.opengraph[key] %>" />
+	<% end %>
 </head>
 <body>
 <%- @content %>
