@@ -19,6 +19,20 @@ If you click on this icon, you’ll see an error notification in extension popup
 
 ![image](../img/err2.png)
 
+## Working with local files
+
+If you’re working with local web-page (e.g. opened via `file://` protocol), Google Chrome may apply some restrictions.
+
+* If you don’t see any stylesheets in LiveStyle popup, it’s most likely because LiveStyle is not allowed to work file URLs (default behaviour for all extensions). To override this restriction, go to _Preferences > Extensions_ and check “Allow access to file URLs” option in LiveStyle extension:
+
+![image](../img/allow-file-urls.png)
+
+* Due to Google Chrome security policy, you won’t see `@import`’ed stylesheets in LiveStyle popup. Simply open DevTools to fix it.
+
+Note that it is *highly recommended* to work with web-pages via `http://` protocol: there’s lots of free and simple tools to start local HTTP server in given folder (LiveStyle will have such option in near future too). When you open web-page via `file://` protocol, Google Chrome applies a number of restrictions that LiveStyle tries to overcome with different hacks. As a result, you may experience slower performance and incorrect page updates.
+
+If you still don’t want to use local HTTP server, just open DevTools for current page and keep it opened during live edit session.
+
 ## Empty list of stylesheets
 
 If you open LiveStyle popup and see no stylesheets but you sure that current page contains external stylesheets, try the following:
@@ -27,13 +41,14 @@ If you open LiveStyle popup and see no stylesheets but you sure that current pag
 * Refresh current page.
 * Close the tab and open again.
 
-Most likely this error may appear after extension automatic update. 
+Most likely this error may appear after extension auto-update. 
 
 ## No connection
 
 Chrome extension connects to editor via Websocket protocol. If you see “No connection” error, it might be one of the following:
 
 * Sublime Text is not running or LiveStyle extension for Sublime Text is not installed.
+* You don’t have the most recent version LiveStyle extension for text editor. If you installed Sublime Text extension via Package Control, simply restart editor to automatically update it.
 * Your current network settings/proxy/firewall blocks connection to `http://127.0.0.1:54000`—a Websocket server runs on this address. Contact your system administrator about this issue.
 
 Another reason of “No connection” issue is broken Sublime Text web-server implementation. Check out `View > Show Console` in ST for error log. In this case you can open [LiveStyle app](/#download) and then restart ST: LiveStyle app has its own server implementation so when Sublime Text starts, it will use it instead of creating a new one.
