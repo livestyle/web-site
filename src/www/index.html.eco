@@ -75,7 +75,7 @@ browserCode:
 	<div class="layout-content layout-content_one-heart">
 		<img src="./i/one-heart.svg" alt="" width="73" height="73" class="section-icon" />
 		<h2>One Heart</h2>
-		<p>In LiveStyle, you connect browser style sheets with files from your editor. It gives you unmatched flexibility: you can use files from your hard drive, USB, FTP, network mount or event new, unsaved files.</p>
+		<p>In LiveStyle, you connect browser style sheets with files from your editor. It gives you unmatched flexibility: you can use files from your hard drive, USB, FTP, network mount or even new, unsaved files.</p>
 
 		<div class="layout-assets">
 			<%- @partial('editor', allTabs: true, code: @document.editorCode2) %>
