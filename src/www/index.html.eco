@@ -118,7 +118,7 @@ browserCode:
 			</li>
 			<li class="feature-summary__item">
 				<h3>Use your own tools</h3>
-				<p>LiveStyle doesn&rsquo;t require any special build tool or&nbsp;web server to&nbsp;work. It&nbsp;integrates directly into your editor and browser. <em>Currently works in&nbsp;Google Chrome and Sublime Text.</em></p>
+				<p>LiveStyle doesn&rsquo;t require any special build tool or&nbsp;web server to&nbsp;work. It&nbsp;integrates directly into your editor and browser. <em>Currently works in&nbsp;Google Chrome and Sublime Text. <a href="https://github.com/livestyle/atom">Atom plugin</a> is available for beta testing.</em></p>
 			</li>
 			<li class="feature-summary__item">
 				<h3>Any scale</h3>

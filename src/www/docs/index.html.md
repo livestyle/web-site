@@ -73,3 +73,14 @@ If you can’t or don’t want to use Package Control, you can try a completely 
 4. In the end, your file structure should look like this:
 ![image](img/st3.png)
 5. Restart Sublime Text.
+
+### Atom plugin
+
+[Atom plugin](https://github.com/livestyle/atom) is available for beta-testing so it must be installed manually (no installation from LiveStyle app yet).
+
+1. In Atom, go to `Preferences > Install`.
+2. Search for `livestyle-atom` plugin and install it.
+
+Or you can install it via `apm`:
+
+`apm install livestyle-atom`
