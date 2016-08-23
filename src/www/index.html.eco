@@ -53,7 +53,7 @@ browserCode:
 			</ul>
 
 			<div class="secret-powers">
-				<a href="/analyzer/" class="secret-powers__link">Secret super-powers</a>
+				<a href="https://www.indiegogo.com/projects/livestyle-analyzer/" class="secret-powers__link">Secret super-powers</a>
 			</div>
 			<%- @partial('download') %>
 			<span class="hero-image"></span>
